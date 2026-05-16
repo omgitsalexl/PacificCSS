@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Editorial CSS Demo</title>
+    <meta
+      name="description"
+      content="A light-first CSS framework inspired by Apple editorial web design, with spacious typography, soft cards, and restrained gradient emphasis."
+    />
+    <link rel="stylesheet" href="framework/apple.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="nav-brand" href="#top">Apple Editorial CSS</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#overview">Overview</a>
+          <a href="#patterns">Patterns</a>
+          <a href="#community">Community</a>
+          <a href="#build">Build</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="overview">
+        <div class="container feature-grid">
+          <div class="hero-copy stack">
+            <p class="eyebrow">Light-first editorial framework</p>
+            <h1 class="display">Quiet surfaces, bold type, and the kind of spacing that lets the page breathe.</h1>
+            <p class="lead">
+              This framework is built around the Apple web language found in editorial and developer pages: soft greys, large
+              rounded cards, restrained gradients, and a layout rhythm led by typography rather than decorative effects.
+            </p>
+            <div class="button-row">
+              <a class="button button-primary" href="#patterns">Explore patterns</a>
+              <a class="button button-secondary" href="#build">Read the guide</a>
+            </div>
+            <div class="hero-meta grid grid-3">
+              <div class="stack">
+                <p class="eyebrow">Whitespace</p>
+                <p class="body">Sections are roomy and cards are allowed to sit quietly on the page.</p>
+              </div>
+              <div class="stack">
+                <p class="eyebrow">Typography</p>
+                <p class="body">Headings carry the experience, with body copy staying soft and concise.</p>
+              </div>
+              <div class="stack">
+                <p class="eyebrow">Emphasis</p>
+                <p class="body">Gradients appear only where they clarify hierarchy or draw attention.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <article class="card card-large hero-panel card-highlight">
+              <span class="mini-label">Design language</span>
+              <div class="art-block">
+                <p class="title">Cards feel like objects, but the page still stays mostly white.</p>
+                <p class="body">
+                  Inspired by Apple’s editorial pages, this balance keeps the layout premium without making the system feel busy.
+                </p>
+              </div>
+            </article>
+
+            <article class="card art-panel">
+              <div class="stack">
+                <p class="eyebrow">Gradient restraint</p>
+                <p class="title">Use color for a moment, not the whole page.</p>
+                <p class="body">Highlight one section, one card, or one phrase at a time.</p>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-tight" id="patterns">
+        <div class="container stack">
+          <div class="stack">
+            <p class="eyebrow">Section patterns</p>
+            <h2 class="title">A reusable bento system for editorial product storytelling.</h2>
+            <p class="lead">
+              The layout below uses the framework’s core patterns: large cards, muted cards, highlighted cards, and a mixed-size
+              grid that feels closer to Apple.com than to a generic UI showcase.
+            </p>
+          </div>
+
+          <div class="bento">
+            <article class="card card-large card-muted stack bento-tall">
+              <p class="eyebrow">Feature story</p>
+              <h3 class="title">Rounded geometry and gentle contrast make dense sections feel calm.</h3>
+              <p class="body">
+                The corners are large without becoming playful, the shadows are nearly invisible, and the grey surface does most
+                of the separation work.
+              </p>
+              <div class="card-rule"></div>
+              <div class="grid grid-2">
+                <div class="stack">
+                  <p class="card-number">01</p>
+                  <p class="caption">Muted surfaces support long-form content.</p>
+                </div>
+                <div class="stack">
+                  <p class="card-number">02</p>
+                  <p class="caption">Nested spacing keeps rhythm steady across sections.</p>
+                </div>
+              </div>
+            </article>
+
+            <div class="grid">
+              <article class="card stack">
+                <p class="eyebrow">Typography first</p>
+                <h3 class="title">The heading should do more work than the decoration.</h3>
+                <p class="body">Large type, compact supporting copy, and clear pacing are the real visual system.</p>
+              </article>
+
+              <article class="card card-highlight stack">
+                <p class="eyebrow">Selective emphasis</p>
+                <h3 class="title">A <span class="gradient-text">small gradient moment</span> is enough.</h3>
+                <p class="body">Use it to lift a card or phrase, not as a permanent background treatment for everything.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted">
+        <div class="container grid grid-2">
+          <div class="stack">
+            <p class="eyebrow">Content section</p>
+            <h2 class="title">Light grey sections let the white cards feel deliberate.</h2>
+            <p class="lead">
+              This pattern mirrors how Apple often separates long pages into soft tonal bands rather than strong boxes or dark
+              dividers.
+            </p>
+          </div>
+
+          <div class="card card-large">
+            <div class="list">
+              <div class="list-item">
+                <p class="eyebrow">Card rhythm</p>
+                <p class="body">Keep enough inner padding that each block reads like a composed piece of content, not a widget.</p>
+              </div>
+              <div class="list-item">
+                <p class="eyebrow">Muted text</p>
+                <p class="body">The secondary copy should sit back noticeably so the hierarchy stays typographic and clear.</p>
+              </div>
+              <div class="list-item">
+                <p class="eyebrow">Borders</p>
+                <p class="body">Use faint borders only to sharpen edges on pale backgrounds, not to define the whole system.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-highlight">
+        <div class="container grid grid-2">
+          <article class="card card-large quote-panel">
+            <p class="quote-mark">“</p>
+            <p class="title">
+              The best Apple-like pages feel almost quiet. The layout, spacing, and leading carry the polish before any accent
+              treatment does.
+            </p>
+            <p class="caption">A good framework should preserve that calm by default.</p>
+          </article>
+
+          <div class="stack">
+            <p class="eyebrow">Highlighted section</p>
+            <h2 class="title">One full-width moment of color can guide the whole page.</h2>
+            <p class="lead">
+              The framework includes a highlight section for emphasis, but it still relies on soft neutrals and white surfaces so
+              the page remains recognizably Apple-like.
+            </p>
+            <div class="button-row">
+              <a class="link-arrow" href="#community">See the community cards</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="community">
+        <div class="container stack">
+          <div class="stack text-center">
+            <p class="eyebrow">Recognition pattern</p>
+            <h2 class="title">A people section inspired by Apple Developer recognition pages.</h2>
+            <p class="lead measure center">
+              Profiles sit in a simple grid with generous image radii, clear names, and concise supporting descriptions.
+            </p>
+          </div>
+
+          <div class="profile-grid">
+            <article class="card profile-card">
+              <div class="profile-image" aria-hidden="true"></div>
+              <div class="stack">
+                <h3 class="profile-name">Avery Stone</h3>
+                <p class="caption">Community organizer</p>
+                <p class="profile-role">Builds local workshops and publishes approachable SwiftUI learning resources.</p>
+              </div>
+            </article>
+
+            <article class="card profile-card">
+              <div class="profile-image" aria-hidden="true"></div>
+              <div class="stack">
+                <h3 class="profile-name">Mina Park</h3>
+                <p class="caption">Educator and writer</p>
+                <p class="profile-role">Shares practical product design guidance with a focus on clarity and craft.</p>
+              </div>
+            </article>
+
+            <article class="card profile-card">
+              <div class="profile-image" aria-hidden="true"></div>
+              <div class="stack">
+                <h3 class="profile-name">Leo Bennett</h3>
+                <p class="caption">Conference mentor</p>
+                <p class="profile-role">Supports first-time speakers and helps developer communities grow in public.</p>
+              </div>
+            </article>
+
+            <article class="card profile-card">
+              <div class="profile-image" aria-hidden="true"></div>
+              <div class="stack">
+                <h3 class="profile-name">Sofia Kim</h3>
+                <p class="caption">Independent developer</p>
+                <p class="profile-role">Combines product work, writing, and meetups to make Apple-platform work feel more open.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tight" id="build">
+        <div class="container">
+          <article class="card card-large cta-panel">
+            <div class="grid grid-2">
+              <div class="stack">
+                <p class="eyebrow">Build with the framework</p>
+                <h2 class="title">Simple class names, disciplined defaults, and enough flexibility for a full editorial page.</h2>
+              </div>
+              <div class="stack">
+                <p class="body">
+                  Start with `container`, `section`, `stack`, `grid`, and `card`. Add `card-muted`, `card-highlight`, and
+                  `section-highlight` only where emphasis is needed. Keep the page spacious and let the typography set the tone.
+                </p>
+                <div class="button-row">
+                  <a class="button button-primary" href="DOCUMENTATION.md">Open documentation</a>
+                  <a class="button button-secondary" href="framework/apple.css">Open CSS</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p class="caption">Apple Editorial CSS demo template</p>
+        <div class="nav-links">
+          <a href="#top">Back to top</a>
+          <a href="DOCUMENTATION.md">Documentation</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
