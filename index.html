@@ -17,6 +17,7 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="#overview">Overview</a>
           <a href="#patterns">Patterns</a>
+          <a href="#gradients">Gradients</a>
           <a href="#community">Community</a>
           <a href="#build">Build</a>
         </nav>
@@ -54,7 +55,7 @@
           </div>
 
           <aside class="hero-aside">
-            <article class="card card-large hero-panel card-highlight">
+            <article class="card card-large hero-panel gradient-card gradient-sky">
               <span class="mini-label">Design language</span>
               <div class="art-block">
                 <p class="title">Cards feel like objects, but the page still stays mostly white.</p>
@@ -114,12 +115,57 @@
                 <p class="body">Large type, compact supporting copy, and clear pacing are the real visual system.</p>
               </article>
 
-              <article class="card card-highlight stack">
+              <article class="card gradient-card gradient-sky stack">
                 <p class="eyebrow">Selective emphasis</p>
-                <h3 class="title">A <span class="gradient-text">small gradient moment</span> is enough.</h3>
+                <h3 class="title">A <span class="text-gradient gradient-sky">small gradient moment</span> is enough.</h3>
                 <p class="body">Use it to lift a card or phrase, not as a permanent background treatment for everything.</p>
               </article>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tight" id="gradients">
+        <div class="container gradient-showcase">
+          <div class="stack">
+            <p class="eyebrow">Gradient system</p>
+            <h2 class="title">Reusable Apple-like gradients for text, cards, and full-width backgrounds.</h2>
+            <p class="lead">
+              The gradients are stronger now so users can actually see them, but they still stay inside a soft Apple-like color
+              palette and remain easy to reuse throughout a page.
+            </p>
+          </div>
+
+          <div class="gradient-samples">
+            <article class="card gradient-card gradient-sky stack">
+              <p class="eyebrow">Sky</p>
+              <h3 class="title"><span class="text-gradient gradient-sky">Cool clarity</span> for product highlights.</h3>
+              <p class="body">Use this for the clearest blue emphasis across cards, headings, and full-width feature moments.</p>
+              <div class="swatch-row">
+                <span class="swatch">gradient-sky</span>
+                <span class="swatch">text-gradient</span>
+              </div>
+            </article>
+
+            <article class="card gradient-card gradient-iris stack">
+              <p class="eyebrow">Iris</p>
+              <h3 class="title"><span class="text-gradient gradient-iris">A softer purple lift</span> for contrast.</h3>
+              <p class="body">Use this when the page needs a richer accent that still feels polished and restrained.</p>
+              <div class="swatch-row">
+                <span class="swatch">gradient-iris</span>
+                <span class="swatch">gradient-card</span>
+              </div>
+            </article>
+
+            <article class="card gradient-card gradient-peach stack">
+              <p class="eyebrow">Peach</p>
+              <h3 class="title"><span class="text-gradient gradient-peach">Warm emphasis</span> for community storytelling.</h3>
+              <p class="body">Use this to add a warmer editorial accent to people, recognition, or narrative sections.</p>
+              <div class="swatch-row">
+                <span class="swatch">gradient-peach</span>
+                <span class="swatch">card or text</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -154,7 +200,7 @@
         </div>
       </section>
 
-      <section class="section section-highlight">
+      <section class="section gradient-section gradient-mint">
         <div class="container grid grid-2">
           <article class="card card-large quote-panel">
             <p class="quote-mark">“</p>
@@ -166,10 +212,10 @@
           </article>
 
           <div class="stack">
-            <p class="eyebrow">Highlighted section</p>
+            <p class="eyebrow">Full-width background</p>
             <h2 class="title">One full-width moment of color can guide the whole page.</h2>
             <p class="lead">
-              The framework includes a highlight section for emphasis, but it still relies on soft neutrals and white surfaces so
+              The new full-width gradient class is easier to notice, while still relying on white surfaces and pale overlays so
               the page remains recognizably Apple-like.
             </p>
             <div class="button-row">
@@ -239,8 +285,8 @@
               </div>
               <div class="stack">
                 <p class="body">
-                  Start with `container`, `section`, `stack`, `grid`, and `card`. Add `card-muted`, `card-highlight`, and
-                  `section-highlight` only where emphasis is needed. Keep the page spacious and let the typography set the tone.
+                  Start with `container`, `section`, `stack`, `grid`, and `card`. Then layer in `text-gradient`,
+                  `gradient-card`, and `gradient-section` where the page needs a visible but still controlled moment of emphasis.
                 </p>
                 <div class="button-row">
                   <a class="button button-primary" href="DOCUMENTATION.md">Open documentation</a>

@@ -8,7 +8,7 @@ It is based on three recurring patterns from the reference pages:
 
 - typography leads the design
 - whitespace and soft contrast do most of the visual work
-- gradients appear rarely and only to provide emphasis
+- gradients appear selectively and only to provide emphasis
 
 The framework is intentionally simple. It avoids heavy abstractions, clever selectors, and overly decorative defaults.
 
@@ -57,7 +57,7 @@ The `:root` block contains the design tokens.
 - `--color-surface` and `--color-surface-muted` control light section tones
 - `--color-text` and `--color-text-muted` define contrast
 - `--color-border` keeps edges readable on pale surfaces
-- `--color-gradient-*` support rare highlight moments
+- `--color-gradient-*` support reusable Apple-like gradient presets
 
 ### Spacing
 
@@ -107,14 +107,14 @@ Recommended use:
 - `card`
 - `card-large`
 - `card-muted`
-- `card-highlight`
+- `gradient-card`
 
 Recommended use:
 
 - use `card` as the default white surface
 - use `card-large` when the content needs more visual weight
 - use `card-muted` for soft grey sections inside a mostly white page
-- use `card-highlight` sparingly for a subtle gradient lift
+- use `gradient-card` with a gradient preset when a card needs a clearer color lift
 
 ### Composition
 
@@ -135,10 +135,18 @@ Keep actions understated. On Apple-style pages, the typography and spacing shoul
 
 ### Optional emphasis
 
-- `gradient-text`
-- `section-highlight`
+- `text-gradient`
+- `gradient-section`
+- `gradient-sky`
+- `gradient-iris`
+- `gradient-peach`
+- `gradient-mint`
 
-Use these only when emphasis is truly needed.
+Use a gradient preset together with an application class:
+
+- `text-gradient gradient-sky`
+- `gradient-card gradient-iris`
+- `gradient-section gradient-mint`
 
 ## Recommended Starter Structure
 
@@ -185,7 +193,7 @@ Use one strong `display`, then step down to `title`, `lead`, and `body`. Avoid t
 
 ### 3. Add surfaces deliberately
 
-Use `card` as the base content block. Introduce `card-muted` and `card-highlight` only where they improve pacing or contrast.
+Use `card` as the base content block. Introduce `card-muted` and `gradient-card` only where they improve pacing or contrast.
 
 ### 4. Use bento sections with mixed scale
 
@@ -193,7 +201,20 @@ The `bento` pattern works best when one card is clearly larger or more important
 
 ### 5. Add gradients last
 
-Use `gradient-text` for a phrase or `section-highlight` for one full-width moment. If too many elements use gradients, the page stops feeling Apple-like.
+Apply a preset first, then the surface type:
+
+- `text-gradient` for headings or short phrases
+- `gradient-card` for a card background
+- `gradient-section` for one full-width highlight section
+
+Suggested presets:
+
+- `gradient-sky` for the clearest Apple-like blue
+- `gradient-iris` for a cooler purple accent
+- `gradient-peach` for a warmer editorial accent
+- `gradient-mint` for a fresh full-width background treatment
+
+If too many elements use gradients, the page stops feeling Apple-like.
 
 ## Example
 
@@ -210,7 +231,7 @@ Use `gradient-text` for a phrase or `section-highlight` for one full-width momen
         <p class="body">Soft grey surfaces help break up long pages.</p>
       </article>
 
-      <article class="card card-highlight">
+      <article class="card gradient-card gradient-sky">
         <h3 class="title">Highlighted card</h3>
         <p class="body">Use this only when the content deserves extra emphasis.</p>
       </article>
@@ -239,7 +260,7 @@ Adjust the surface and gradient tokens first.
 ```css
 :root {
   --color-surface-muted: #f2f0ec;
-  --color-gradient-warm: #ffd4b0;
+  --color-gradient-peach-end: #ffd4b0;
 }
 ```
 
@@ -258,7 +279,7 @@ Change the radius scale and shadows.
 ### To create a quieter version
 
 - reduce the number of highlighted cards
-- remove `gradient-text` from headlines
+- remove `text-gradient` from headlines
 - use white cards more often than muted cards
 
 ## Practical Rule of Thumb

@@ -10,9 +10,14 @@
   --color-border-strong: rgba(29, 29, 31, 0.12);
   --color-accent: #0071e3;
   --color-accent-soft: #4f8df6;
-  --color-gradient-start: #6e72ff;
-  --color-gradient-end: #7fd3ff;
-  --color-gradient-warm: #ffd9b8;
+  --color-gradient-sky-start: #5a67ff;
+  --color-gradient-sky-end: #7ed7ff;
+  --color-gradient-iris-start: #7367ff;
+  --color-gradient-iris-end: #c39cff;
+  --color-gradient-peach-start: #ffb57d;
+  --color-gradient-peach-end: #ffd9b8;
+  --color-gradient-mint-start: #72cfff;
+  --color-gradient-mint-end: #8ef0d2;
 
   --shadow-soft: 0 18px 42px rgba(15, 23, 42, 0.06);
   --shadow-card: 0 8px 24px rgba(15, 23, 42, 0.04);
@@ -179,13 +184,6 @@ textarea {
   background: var(--color-surface-muted);
 }
 
-.card-highlight {
-  background:
-    radial-gradient(circle at top right, rgba(127, 211, 255, 0.22), transparent 34%),
-    linear-gradient(135deg, rgba(110, 114, 255, 0.08), rgba(255, 217, 184, 0.14)),
-    var(--color-white);
-}
-
 .hero {
   padding: var(--space-7) 0 var(--space-10);
 }
@@ -245,17 +243,50 @@ textarea {
   content: ">";
 }
 
+.gradient-sky {
+  --gradient-fill: linear-gradient(135deg, var(--color-gradient-sky-start), var(--color-gradient-sky-end));
+  --gradient-glow: rgba(126, 215, 255, 0.34);
+}
+
+.gradient-iris {
+  --gradient-fill: linear-gradient(135deg, var(--color-gradient-iris-start), var(--color-gradient-iris-end));
+  --gradient-glow: rgba(195, 156, 255, 0.28);
+}
+
+.gradient-peach {
+  --gradient-fill: linear-gradient(135deg, var(--color-gradient-peach-start), var(--color-gradient-peach-end));
+  --gradient-glow: rgba(255, 191, 144, 0.3);
+}
+
+.gradient-mint {
+  --gradient-fill: linear-gradient(135deg, var(--color-gradient-mint-start), var(--color-gradient-mint-end));
+  --gradient-glow: rgba(142, 240, 210, 0.26);
+}
+
+.text-gradient,
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+  background-image: var(--gradient-fill, linear-gradient(135deg, var(--color-gradient-sky-start), var(--color-gradient-sky-end)));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+.gradient-card,
+.card-highlight {
+  background:
+    radial-gradient(circle at top right, var(--gradient-glow, rgba(126, 215, 255, 0.34)), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.32)),
+    var(--gradient-fill, linear-gradient(135deg, rgba(90, 103, 255, 0.26), rgba(126, 215, 255, 0.38))),
+    var(--color-white);
+  border-color: rgba(29, 29, 31, 0.07);
+}
+
+.gradient-section,
 .section-highlight {
   background:
-    radial-gradient(circle at top left, rgba(127, 211, 255, 0.22), transparent 26%),
-    linear-gradient(135deg, rgba(110, 114, 255, 0.06), rgba(255, 217, 184, 0.1)),
+    radial-gradient(circle at top left, var(--gradient-glow, rgba(126, 215, 255, 0.34)), transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.58)),
+    var(--gradient-fill, linear-gradient(135deg, rgba(90, 103, 255, 0.16), rgba(126, 215, 255, 0.24))),
     var(--color-white);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
@@ -348,6 +379,17 @@ textarea {
   gap: var(--space-5);
 }
 
+.gradient-showcase {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.gradient-samples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
 .mini-label {
   display: inline-flex;
   align-items: center;
@@ -383,6 +425,24 @@ textarea {
   line-height: 1;
   letter-spacing: -0.05em;
   font-weight: 700;
+}
+
+.swatch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
 }
 
 .card-rule {
@@ -476,7 +536,8 @@ textarea {
 @media (max-width: 1100px) {
   .feature-grid,
   .bento,
-  .profile-grid {
+  .profile-grid,
+  .gradient-samples {
     grid-template-columns: 1fr;
   }
 
