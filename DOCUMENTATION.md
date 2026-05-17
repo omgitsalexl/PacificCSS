@@ -57,7 +57,7 @@ The `:root` block contains the design tokens.
 - `--color-surface` and `--color-surface-muted` control light section tones
 - `--color-text` and `--color-text-muted` define contrast
 - `--color-border` keeps edges readable on pale surfaces
-- `--color-gradient-*` support reusable Apple-like gradient presets
+- `--color-gradient-*` support reusable Apple-like mesh gradient presets
 
 ### Spacing
 
@@ -141,6 +141,8 @@ Keep actions understated. On Apple-style pages, the typography and spacing shoul
 - `gradient-iris`
 - `gradient-peach`
 - `gradient-mint`
+- `gradient-sunset`
+- `gradient-berry`
 
 Use a gradient preset together with an application class:
 
@@ -213,8 +215,23 @@ Suggested presets:
 - `gradient-iris` for a cooler purple accent
 - `gradient-peach` for a warmer editorial accent
 - `gradient-mint` for a fresh full-width background treatment
+- `gradient-sunset` for the most vivid warm feature moment
+- `gradient-berry` for a deeper premium contrast accent
 
 If too many elements use gradients, the page stops feeling Apple-like.
+
+## Mesh Gradient Notes
+
+The gradient presets use stacked radial gradients over a pale base instead of a simple two-color linear blend.
+
+That gives them a closer feel to the multi-point mesh gradients used in current Apple design examples:
+
+- stronger focal color
+- softer edges at the perimeter
+- more movement across the surface
+- better reuse across text, cards, and full-width sections
+
+In practice, each preset should be treated like a reusable color family rather than a one-off effect.
 
 ## Example
 
@@ -261,6 +278,7 @@ Adjust the surface and gradient tokens first.
 :root {
   --color-surface-muted: #f2f0ec;
   --color-gradient-peach-end: #ffd4b0;
+  --color-gradient-sunset-2: #ff5f98;
 }
 ```
 
