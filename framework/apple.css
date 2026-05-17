@@ -452,6 +452,12 @@ textarea {
   overflow: hidden;
 }
 
+.hero-panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+}
+
 .hero-panel::before,
 .quote-panel::before,
 .profile-panel::before,
@@ -513,6 +519,12 @@ textarea {
   align-content: end;
 }
 
+.hero-panel .art-block {
+  min-height: auto;
+  gap: var(--space-3);
+  align-content: start;
+}
+
 .bento-tall {
   min-height: 100%;
 }
@@ -567,12 +579,24 @@ textarea {
 }
 
 .quote-panel {
+  display: grid;
+  align-content: center;
+  gap: var(--space-2);
   min-height: 26rem;
 }
 
+.quote-panel .title {
+  max-width: 12ch;
+}
+
+.quote-panel .caption {
+  max-width: 30ch;
+}
+
 .quote-mark {
+  margin: 0;
   font-size: 4rem;
-  line-height: 1;
+  line-height: 0.8;
   color: rgba(29, 29, 31, 0.18);
 }
 
@@ -584,7 +608,9 @@ textarea {
 
 .profile-card {
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: var(--space-4);
+  align-content: start;
 }
 
 .profile-image {
@@ -597,15 +623,27 @@ textarea {
     #eef1f6;
 }
 
+.profile-copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
 .profile-name {
   margin: 0;
   font-size: 1.08rem;
   font-weight: 600;
+  line-height: 1.15;
   letter-spacing: -0.02em;
+}
+
+.profile-copy .caption {
+  line-height: 1.25;
 }
 
 .profile-role {
   margin: 0;
+  line-height: 1.45;
   color: var(--color-text-muted);
 }
 
