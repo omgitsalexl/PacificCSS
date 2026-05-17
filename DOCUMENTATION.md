@@ -148,12 +148,22 @@ Keep actions understated. On Apple-style pages, the typography and spacing shoul
 - `gradient-mint`
 - `gradient-sunset`
 - `gradient-berry`
+- `glass`
+- `glass-bar`
+- `glass-pill`
+- `glass-round`
 
 Use a gradient preset together with an application class:
 
 - `text-gradient gradient-sky`
 - `gradient-card gradient-iris`
 - `gradient-section gradient-mint`
+
+Glass classes work the same way:
+
+- `glass glass-bar bordered`
+- `glass glass-pill bordered`
+- `glass glass-round bordered`
 
 ## Recommended Starter Structure
 
@@ -229,6 +239,18 @@ Suggested presets:
 
 If too many elements use gradients, the page stops feeling Apple-like.
 
+### 6. Add glass sparingly
+
+The frosted glass utilities are meant to be accents.
+
+Good uses:
+
+- sticky or floating header bars
+- pricing pills
+- compact round icon controls
+
+Avoid using glass on every large card or every section. The effect is strongest when it appears only in a few focused places.
+
 ## Mesh Gradient Notes
 
 The gradient presets use stacked radial gradients over a pale base instead of a simple two-color linear blend.
@@ -299,6 +321,31 @@ Examples:
 ```
 
 `inverted` can also be combined with `bordered` when you want a darker surface with an explicit edge.
+
+## Glass
+
+The glass system is intentionally small and composable.
+
+- `glass` adds the frosted treatment
+- `glass-bar` shapes a wider rounded bar
+- `glass-pill` shapes a compact pill
+- `glass-round` shapes a circular control
+
+Examples:
+
+```html
+<div class="glass glass-bar bordered">
+  ...
+</div>
+
+<span class="glass glass-pill bordered">From $399</span>
+
+<button class="glass glass-round bordered" type="button">
+  &gt;
+</button>
+```
+
+For the cleanest Apple-like result, use glass over gradients, color fields, or image-heavy surfaces rather than over plain white.
 
 ## Responsive Expectations
 

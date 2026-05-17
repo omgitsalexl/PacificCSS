@@ -12,17 +12,20 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="container nav">
-        <a class="nav-brand" href="#top">Apple Editorial CSS</a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="#overview">Overview</a>
-          <a href="#patterns">Patterns</a>
-          <a href="#gradients">Gradients</a>
-          <a href="#borders">Borders</a>
-          <a href="#inversion">Inversion</a>
-          <a href="#community">Community</a>
-          <a href="#build">Build</a>
-        </nav>
+      <div class="container">
+        <div class="nav glass glass-bar bordered">
+          <a class="nav-brand" href="#top">Apple Editorial CSS</a>
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#overview">Overview</a>
+            <a href="#patterns">Patterns</a>
+            <a href="#gradients">Gradients</a>
+            <a href="#glass">Glass</a>
+            <a href="#borders">Borders</a>
+            <a href="#inversion">Inversion</a>
+            <a href="#community">Community</a>
+            <a href="#build">Build</a>
+          </nav>
+        </div>
       </div>
     </header>
 
@@ -202,6 +205,46 @@
         </div>
       </section>
 
+      <section class="section-tight" id="glass">
+        <div class="container glass-showcase">
+          <div class="stack">
+            <p class="eyebrow">Glass accents</p>
+            <h2 class="title">Use frosted glass as a small accent, not as the whole visual language.</h2>
+            <p class="lead">
+              These classes borrow from Apple’s restrained glass treatment: bright, thin, softly bordered, and reserved for
+              headers, pills, and small controls where the blur can add polish without taking over the page.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card card-large gradient-card gradient-sky stack">
+              <div class="button-row">
+                <span class="glass glass-pill bordered">From $399</span>
+                <span class="glass glass-round bordered" aria-hidden="true">></span>
+              </div>
+              <h3 class="title">Glass works best on small surfaces that sit over color.</h3>
+              <p class="body">
+                Use it for pricing pills, sticky bars, and compact round controls where the frosted layer can read clearly.
+              </p>
+            </article>
+
+            <article class="card stack">
+              <p class="eyebrow">Recommended classes</p>
+              <div class="swatch-row">
+                <span class="glass glass-pill bordered">glass</span>
+                <span class="glass glass-pill bordered">glass-bar</span>
+                <span class="glass glass-pill bordered">glass-pill</span>
+                <span class="glass glass-pill bordered">glass-round</span>
+              </div>
+              <p class="body">
+                Start with `glass`, then add one shape class depending on the use case. Pair with `bordered` when you want the
+                brighter edge Apple uses on translucent controls.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section section-muted">
         <div class="container grid grid-2">
           <div class="stack">
@@ -314,6 +357,7 @@
               the page remains recognizably Apple-like.
             </p>
             <div class="button-row">
+              <a class="glass glass-pill bordered" href="#glass">See glass accents</a>
               <a class="link-arrow" href="#community">See the community cards</a>
             </div>
           </div>
