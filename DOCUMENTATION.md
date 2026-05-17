@@ -110,6 +110,7 @@ Recommended use:
 - `card-muted`
 - `gradient-card`
 - `bordered`
+- `inverted`
 
 Recommended use:
 
@@ -118,6 +119,7 @@ Recommended use:
 - use `card-muted` for soft grey sections inside a mostly white page
 - use `gradient-card` with a gradient preset when a card needs a clearer color lift
 - use `bordered` only when a card or section needs extra edge definition
+- use `inverted` when a card or section needs the framework’s darker surface and lighter text treatment
 
 ### Composition
 
@@ -202,6 +204,8 @@ Use `card` as the base content block. Introduce `card-muted` and `gradient-card`
 
 If a layout needs clearer edge definition, add `bordered` explicitly rather than relying on default borders.
 
+If a layout needs a darker break in rhythm, add `inverted` to the card or section instead of creating a separate dark component.
+
 ### 4. Use bento sections with mixed scale
 
 The `bento` pattern works best when one card is clearly larger or more important than the others. Avoid making every cell feel equal.
@@ -262,10 +266,39 @@ In practice, each preset should be treated like a reusable color family rather t
         <h3 class="title">Bordered card</h3>
         <p class="body">Add a border only when the page benefits from that extra definition.</p>
       </article>
+
+      <article class="card inverted">
+        <h3 class="title">Inverted card</h3>
+        <p class="body">Use the same content classes on a darker surface without changing the markup structure.</p>
+      </article>
     </div>
   </div>
 </section>
 ```
+
+## Inversion
+
+The `inverted` class flips a surface to the framework’s dark treatment.
+
+It is designed to work on:
+
+- cards
+- larger callouts
+- full-width sections
+
+Examples:
+
+```html
+<article class="card inverted">
+  ...
+</article>
+
+<section class="section inverted">
+  ...
+</section>
+```
+
+`inverted` can also be combined with `bordered` when you want a darker surface with an explicit edge.
 
 ## Responsive Expectations
 

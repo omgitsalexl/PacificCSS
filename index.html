@@ -19,6 +19,7 @@
           <a href="#patterns">Patterns</a>
           <a href="#gradients">Gradients</a>
           <a href="#borders">Borders</a>
+          <a href="#inversion">Inversion</a>
           <a href="#community">Community</a>
           <a href="#build">Build</a>
         </nav>
@@ -267,6 +268,33 @@
         </div>
       </section>
 
+      <section class="section-tight" id="inversion">
+        <div class="container stack">
+          <div class="stack">
+            <p class="eyebrow">Inverted surfaces</p>
+            <h2 class="title">Invert a card or a full-width section without rewriting the content classes.</h2>
+            <p class="lead">
+              Add `inverted` when a part of the page needs a darker, higher-contrast moment. The section or card will switch to
+              the framework’s inverted surface and text colors automatically.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card stack">
+              <p class="eyebrow">Default card</p>
+              <h3 class="title">Light surface with dark text.</h3>
+              <p class="body">This keeps the normal editorial tone of the framework.</p>
+            </article>
+
+            <article class="card inverted stack">
+              <p class="eyebrow">Inverted card</p>
+              <h3 class="title">Dark surface with light text.</h3>
+              <p class="body">The same typography classes work here, but the section flips to the framework’s inverted palette.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section gradient-section gradient-mint">
         <div class="container grid grid-2">
           <article class="card card-large quote-panel">
@@ -289,6 +317,32 @@
               <a class="link-arrow" href="#community">See the community cards</a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section inverted">
+        <div class="container grid grid-2">
+          <div class="stack">
+            <p class="eyebrow">Full-width inversion</p>
+            <h2 class="title">The same class also works for a full section.</h2>
+            <p class="lead">
+              Use `inverted` on a section when the page needs a stronger break in rhythm. The lighter cards can still sit inside
+              it, or you can keep the whole block dark for a more immersive moment.
+            </p>
+            <div class="button-row">
+              <a class="button button-primary" href="#build">View build guidance</a>
+              <a class="button button-secondary" href="#community">See profile cards</a>
+            </div>
+          </div>
+
+          <article class="card inverted bordered stack">
+            <p class="eyebrow">Combined utilities</p>
+            <h3 class="title">`inverted` and `bordered` can be used together.</h3>
+            <p class="body">
+              This gives you a darker card with an optional edge, using the same composable utility approach as the rest of the
+              framework.
+            </p>
+          </article>
         </div>
       </section>
 

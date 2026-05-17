@@ -4,8 +4,11 @@
   --color-surface: #fbfbfd;
   --color-surface-muted: #f0f1f5;
   --color-surface-strong: #e8ebf1;
+  --color-surface-inverted: #111214;
   --color-text: #1d1d1f;
   --color-text-muted: #6e6e73;
+  --color-text-inverted: #f5f5f7;
+  --color-text-inverted-muted: rgba(245, 245, 247, 0.76);
   --color-border: rgba(29, 29, 31, 0.08);
   --color-border-strong: rgba(29, 29, 31, 0.12);
   --color-accent: #0071e3;
@@ -352,6 +355,51 @@ textarea {
 
 .bordered {
   border: 1px solid var(--color-border);
+}
+
+.inverted {
+  background: var(--color-surface-inverted);
+  color: var(--color-text-inverted);
+}
+
+.inverted .eyebrow,
+.inverted .lead,
+.inverted .body,
+.inverted .caption,
+.inverted .profile-role,
+.inverted .nav-links a,
+.inverted .swatch {
+  color: var(--color-text-inverted-muted);
+}
+
+.inverted .display,
+.inverted .title,
+.inverted .profile-name,
+.inverted .card-number,
+.inverted .nav-brand {
+  color: var(--color-text-inverted);
+}
+
+.inverted .button-primary {
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.inverted .button-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-text-inverted);
+}
+
+.inverted .link-arrow {
+  color: var(--color-text-inverted);
+}
+
+.inverted .card-rule {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.inverted.bordered {
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .site-header {
