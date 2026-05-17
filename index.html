@@ -18,6 +18,7 @@
           <a href="#overview">Overview</a>
           <a href="#patterns">Patterns</a>
           <a href="#gradients">Gradients</a>
+          <a href="#borders">Borders</a>
           <a href="#community">Community</a>
           <a href="#build">Build</a>
         </nav>
@@ -223,9 +224,45 @@
               </div>
               <div class="list-item">
                 <p class="eyebrow">Borders</p>
-                <p class="body">Use faint borders only to sharpen edges on pale backgrounds, not to define the whole system.</p>
+                <p class="body">Borders are now opt-in so the framework stays softer by default and only sharpens where requested.</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-tight" id="borders">
+        <div class="container stack">
+          <div class="stack">
+            <p class="eyebrow">Border control</p>
+            <h2 class="title">Borderless by default, bordered only when you ask for it.</h2>
+            <p class="lead">
+              The framework now removes borders from the default surfaces. Add the `bordered` class only when a section, card, or
+              control needs extra edge definition.
+            </p>
+          </div>
+
+          <div class="grid grid-2">
+            <article class="card stack">
+              <p class="eyebrow">Default card</p>
+              <h3 class="title">Soft separation through shape and shadow.</h3>
+              <p class="body">This is the new baseline: rounded geometry, pale surface, and no default border.</p>
+            </article>
+
+            <article class="card bordered stack">
+              <p class="eyebrow">Bordered card</p>
+              <h3 class="title">Add a border only when the layout benefits from it.</h3>
+              <p class="body">Use `bordered` to sharpen edges on pale backgrounds or when you want a more structured look.</p>
+            </article>
+          </div>
+
+          <div class="card card-large bordered stack">
+            <p class="eyebrow">Opt-in utility</p>
+            <h3 class="title">The same class can be used on larger surfaces too.</h3>
+            <p class="body">
+              Apply `bordered` to cards, callouts, and sections when you want subtle edge definition without changing the
+              framework’s softer default appearance.
+            </p>
           </div>
         </div>
       </section>

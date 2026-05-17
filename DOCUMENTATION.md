@@ -57,6 +57,7 @@ The `:root` block contains the design tokens.
 - `--color-surface` and `--color-surface-muted` control light section tones
 - `--color-text` and `--color-text-muted` define contrast
 - `--color-border` keeps edges readable on pale surfaces
+- borders are opt-in through the `bordered` utility rather than built into the default surfaces
 - `--color-gradient-*` support reusable Apple-like mesh gradient presets
 
 ### Spacing
@@ -108,6 +109,7 @@ Recommended use:
 - `card-large`
 - `card-muted`
 - `gradient-card`
+- `bordered`
 
 Recommended use:
 
@@ -115,6 +117,7 @@ Recommended use:
 - use `card-large` when the content needs more visual weight
 - use `card-muted` for soft grey sections inside a mostly white page
 - use `gradient-card` with a gradient preset when a card needs a clearer color lift
+- use `bordered` only when a card or section needs extra edge definition
 
 ### Composition
 
@@ -197,6 +200,8 @@ Use one strong `display`, then step down to `title`, `lead`, and `body`. Avoid t
 
 Use `card` as the base content block. Introduce `card-muted` and `gradient-card` only where they improve pacing or contrast.
 
+If a layout needs clearer edge definition, add `bordered` explicitly rather than relying on default borders.
+
 ### 4. Use bento sections with mixed scale
 
 The `bento` pattern works best when one card is clearly larger or more important than the others. Avoid making every cell feel equal.
@@ -251,6 +256,11 @@ In practice, each preset should be treated like a reusable color family rather t
       <article class="card gradient-card gradient-sky">
         <h3 class="title">Highlighted card</h3>
         <p class="body">Use this only when the content deserves extra emphasis.</p>
+      </article>
+
+      <article class="card bordered">
+        <h3 class="title">Bordered card</h3>
+        <p class="body">Add a border only when the page benefits from that extra definition.</p>
       </article>
     </div>
   </div>
