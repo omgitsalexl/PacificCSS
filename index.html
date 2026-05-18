@@ -17,6 +17,7 @@
           <a class="nav-brand" href="#top">Apple Editorial CSS</a>
           <nav class="nav-links" aria-label="Primary">
             <a href="#overview">Overview</a>
+            <a href="#highlights">Highlights</a>
             <a href="#patterns">Patterns</a>
             <a href="#gradients">Gradients</a>
             <a href="#glass">Glass</a>
@@ -78,6 +79,240 @@
               </div>
             </article>
           </aside>
+        </div>
+      </section>
+
+      <section class="section-tight" id="highlights">
+        <div class="container stack">
+          <div class="stack">
+            <p class="eyebrow">Highlights carousel primitive</p>
+            <h2 class="title">A reusable Apple-style highlights rail with timed bullets, pause, play, and replay states.</h2>
+            <p class="lead">
+              This primitive is built to mirror Apple’s current highlights gallery behavior: autoplay begins in view, the active
+              bullet expands into a timed pill, manual bullet selection pauses playback, and the gallery ends on the final card
+              until replay is chosen.
+            </p>
+          </div>
+
+          <div
+            class="highlights-carousel card card-large bordered"
+            data-highlights-carousel
+            data-autoplay-duration="6150"
+            aria-label="Series 11 highlights gallery"
+          >
+            <div class="highlights-carousel-rail glass glass-bar bordered" data-highlights-controls>
+              <div class="highlights-carousel-tablist" data-highlights-nav></div>
+              <button data-highlights-toggle></button>
+            </div>
+
+            <div class="highlights-carousel-panels" data-highlights-panels>
+              <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Hypertension notification">
+                <div class="highlights-demo-media highlights-demo-media-health gradient-card gradient-peach">
+                  <div class="highlights-watch highlights-watch-titanium">
+                    <div class="highlights-watch-screen highlights-watch-screen-health">
+                      <span class="highlights-alert-pill">Possible hypertension</span>
+                      <span class="highlights-heart"></span>
+                    </div>
+                  </div>
+                  <div class="highlights-float-card">
+                    <span class="highlights-float-label">30-day pattern</span>
+                    <span class="highlights-float-value">Review available</span>
+                  </div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Health</p>
+                  <p class="highlights-carousel-copy">
+                    Apple Watch Series 11 can spot signs of chronic high blood pressure and notify you of possible hypertension.
+                  </p>
+                </div>
+              </article>
+
+              <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Sleep score">
+                <div class="highlights-demo-media highlights-demo-media-sleep gradient-card gradient-sky">
+                  <div class="highlights-watch highlights-watch-slate">
+                    <div class="highlights-watch-screen highlights-watch-screen-sleep">
+                      <span class="highlights-score-ring"></span>
+                      <span class="highlights-score-value">87</span>
+                    </div>
+                  </div>
+                  <div class="highlights-night-orb"></div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Recovery</p>
+                  <p class="highlights-carousel-copy">
+                    Sleep score gives you a simple way to track quality over time and understand whether your routine is getting
+                    more restorative.
+                  </p>
+                </div>
+              </article>
+
+              <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Battery">
+                <div class="highlights-demo-media highlights-demo-media-battery gradient-card gradient-mint">
+                  <div class="highlights-battery-shell">
+                    <div class="highlights-battery-fill"></div>
+                  </div>
+                  <div class="highlights-battery-metrics">
+                    <span>24 hours normal use</span>
+                    <span>8 hours after 15 min charge</span>
+                  </div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Battery</p>
+                  <p class="highlights-carousel-copy">
+                    Up to 24 hours of battery life means the watch can move from the workday into sleep tracking without breaking
+                    the rhythm.
+                  </p>
+                </div>
+              </article>
+
+              <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Display">
+                <div class="highlights-demo-media highlights-demo-media-display gradient-card gradient-berry">
+                  <div class="highlights-watch highlights-watch-rose">
+                    <div class="highlights-watch-screen highlights-watch-screen-display"></div>
+                  </div>
+                  <div class="highlights-glass-sheet"></div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Durability</p>
+                  <p class="highlights-carousel-copy">
+                    A glass display that is twice as scratch resistant as the prior generation keeps the front surface looking
+                    sharper for longer.
+                  </p>
+                </div>
+              </article>
+
+              <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Workout Buddy">
+                <div class="highlights-demo-media highlights-demo-media-workout gradient-card gradient-sunset">
+                  <div class="highlights-message-stack">
+                    <span class="highlights-message-card">That was your fastest 5K ever.</span>
+                    <span class="highlights-message-card">You climbed 2,000 feet today.</span>
+                  </div>
+                  <div class="highlights-audio-wave" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Fitness</p>
+                  <p class="highlights-carousel-copy">
+                    Workout Buddy brings personalized audible motivation into the session, using your recent training context to
+                    sound more timely than a generic prompt.
+                  </p>
+                </div>
+              </article>
+
+              <article
+                class="highlights-carousel-slide highlights-carousel-slide-dark"
+                data-highlights-slide
+                data-highlights-label="5G cellular"
+              >
+                <div class="highlights-demo-media highlights-demo-media-cellular">
+                  <div class="highlights-watch highlights-watch-dark">
+                    <div class="highlights-watch-screen highlights-watch-screen-call">
+                      <span class="highlights-call-avatar"></span>
+                      <span class="highlights-call-name">Dad</span>
+                      <span class="highlights-call-actions"></span>
+                    </div>
+                  </div>
+                  <div class="highlights-signal-stack" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+                <div class="highlights-carousel-caption">
+                  <p class="eyebrow">Connectivity</p>
+                  <p class="highlights-carousel-copy">
+                    5G cellular pushes calls, downloads, and coverage forward so the watch feels faster when the iPhone is not
+                    nearby.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="grid grid-2 highlights-carousel-grid">
+            <div class="stack">
+              <p class="eyebrow">Same primitive, different content</p>
+              <h3 class="title">Multiple instances can run on the same page without sharing state or timing.</h3>
+              <p class="body">
+                This second example uses a different card count and a different autoplay duration, while keeping the same HTML
+                contract and controls. The intent is to make the primitive reusable without clever setup or one-off JavaScript.
+              </p>
+            </div>
+
+            <div
+              class="highlights-carousel highlights-carousel-compact card bordered"
+              data-highlights-carousel
+              data-autoplay-duration="5200"
+              aria-label="Studio kit highlights gallery"
+            >
+              <div class="highlights-carousel-rail glass glass-bar bordered" data-highlights-controls>
+                <div class="highlights-carousel-tablist" data-highlights-nav></div>
+                <button data-highlights-toggle></button>
+              </div>
+
+              <div class="highlights-carousel-panels" data-highlights-panels>
+                <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Quiet materials">
+                  <div class="highlights-demo-media highlights-demo-media-material gradient-card gradient-sky">
+                    <div class="highlights-material-panel"></div>
+                  </div>
+                  <div class="highlights-carousel-caption">
+                    <p class="eyebrow">Materials</p>
+                    <p class="highlights-carousel-copy">
+                      Soft matte surfaces and pale contrast let the content stay premium without feeling loud.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Shared controls">
+                  <div class="highlights-demo-media highlights-demo-media-controls gradient-card gradient-mint">
+                    <div class="highlights-control-pills">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="highlights-carousel-caption">
+                    <p class="eyebrow">Controls</p>
+                    <p class="highlights-carousel-copy">
+                      The same timed rail works for any content set as long as each slide has a clear label.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Compact storytelling">
+                  <div class="highlights-demo-media highlights-demo-media-story gradient-card gradient-peach">
+                    <div class="highlights-story-columns">
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="highlights-carousel-caption">
+                    <p class="eyebrow">Storytelling</p>
+                    <p class="highlights-carousel-copy">
+                      Compact product stories can reuse the primitive without pretending every section has the same payload.
+                    </p>
+                  </div>
+                </article>
+
+                <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Replay state">
+                  <div class="highlights-demo-media highlights-demo-media-replay gradient-card gradient-iris">
+                    <div class="highlights-replay-orbit"></div>
+                  </div>
+                  <div class="highlights-carousel-caption">
+                    <p class="eyebrow">Lifecycle</p>
+                    <p class="highlights-carousel-copy">
+                      The gallery ends on its final card and exposes replay rather than silently looping forever.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -473,5 +708,6 @@
         </div>
       </div>
     </footer>
+    <script src="framework/highlights-carousel.js"></script>
   </body>
 </html>

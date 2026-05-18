@@ -16,6 +16,7 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 
 - [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
 - [`framework/apple.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/apple.css) is the framework stylesheet
+- [`framework/highlights-carousel.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/highlights-carousel.js) auto-initializes the highlights carousel primitive
 - [`DOCUMENTATION.md`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/DOCUMENTATION.md) is this guide
 
 ## Design Intent
@@ -126,6 +127,7 @@ Recommended use:
 - `hero`
 - `bento`
 - `feature-grid`
+- `highlights-carousel`
 
 These help create the overall page rhythm seen in the demo. They are intended for editorial layouts rather than app UI.
 
@@ -263,6 +265,55 @@ That gives them a closer feel to the multi-point mesh gradients used in current 
 - better reuse across text, cards, and full-width sections
 
 In practice, each preset should be treated like a reusable color family rather than a one-off effect.
+
+## Highlights Carousel
+
+The highlights carousel is a declarative primitive for Apple-style product highlight rails.
+
+It is auto-initialized by `framework/highlights-carousel.js` and supports multiple instances on the same page.
+
+### Behavior
+
+- autoplay begins only when the carousel enters view
+- active bullet expands into a pill and fills over roughly `6150ms` by default
+- manual bullet selection pauses autoplay
+- the control button switches between play, pause, and replay states
+- autoplay ends on the last card instead of looping
+- reduced-motion users get manual navigation instead of timed autoplay
+
+### Markup contract
+
+```html
+<div class="highlights-carousel card card-large bordered" data-highlights-carousel aria-label="Product highlights gallery">
+  <div class="highlights-carousel-rail glass glass-bar bordered" data-highlights-controls>
+    <div class="highlights-carousel-tablist" data-highlights-nav></div>
+    <button data-highlights-toggle></button>
+  </div>
+
+  <div class="highlights-carousel-panels" data-highlights-panels>
+    <article class="highlights-carousel-slide" data-highlights-slide data-highlights-label="Battery">
+      <div class="highlights-demo-media">...</div>
+      <div class="highlights-carousel-caption">
+        <p class="eyebrow">Battery</p>
+        <p class="highlights-carousel-copy">Up to 24 hours of battery life.</p>
+      </div>
+    </article>
+  </div>
+</div>
+```
+
+### Optional authored attributes
+
+- `data-autoplay-duration="5200"` overrides the default dwell time for one carousel
+- `data-highlights-label="Battery"` provides the accessible bullet label for a slide
+- `data-highlights-await-media` on a slide tells the autoplay logic to wait for active `video` or `audio` media in that slide before advancing
+
+### Authoring notes
+
+- keep one authored slide per highlight
+- always provide a clear `data-highlights-label`
+- use static media, inline video, or custom art inside each slide
+- include the script on any page that uses the primitive
 
 ## Example
 
