@@ -16,7 +16,8 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 
 - [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
 - [`framework/apple.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/apple.css) is the framework stylesheet
-- [`framework/highlights-carousel.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/highlights-carousel.js) auto-initializes the highlights carousel primitive
+- [`framework/carousel.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.css) is the optional carousel stylesheet
+- [`framework/carousel.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.js) auto-initializes the highlights carousel primitive
 - [`DOCUMENTATION.md`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/DOCUMENTATION.md) is this guide
 
 ## Design Intent
@@ -153,9 +154,14 @@ Recommended use:
 - `hero`
 - `bento`
 - `feature-grid`
-- `highlights-carousel`
 
 These help create the overall page rhythm seen in the demo. They are intended for editorial layouts rather than app UI.
+
+### Optional carousel primitive
+
+- `highlights-carousel`
+
+The highlights carousel is intentionally split out from the core framework so pages that do not use it can skip both its stylesheet and its JavaScript.
 
 ### Actions
 
@@ -309,7 +315,14 @@ In practice, each preset should be treated like a reusable color family rather t
 
 The highlights carousel is a declarative primitive for Apple-style product highlight rails.
 
-It is auto-initialized by `framework/highlights-carousel.js` and supports multiple instances on the same page.
+Load it only on pages that need it:
+
+```html
+<link rel="stylesheet" href="framework/carousel.css" />
+<script src="framework/carousel.js"></script>
+```
+
+It is auto-initialized by `framework/carousel.js` and supports multiple instances on the same page.
 
 ### Behavior
 
