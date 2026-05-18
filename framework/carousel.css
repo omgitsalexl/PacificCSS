@@ -38,7 +38,6 @@
   gap: var(--highlights-rail-gap);
   width: fit-content;
   max-width: 100%;
-  padding: 0.35rem;
   border-radius: 999px;
 }
 

@@ -337,7 +337,7 @@ It is auto-initialized by `framework/carousel.js` and supports multiple instance
 
 ```html
 <div class="highlights-carousel card card-large bordered" data-highlights-carousel aria-label="Product highlights gallery">
-  <div class="highlights-carousel-rail glass glass-bar bordered" data-highlights-controls>
+  <div class="highlights-carousel-rail glass glass-bar bordered pad-x-2 pad-y-1" data-highlights-controls>
     <div class="highlights-carousel-tablist" data-highlights-nav></div>
     <button data-highlights-toggle></button>
   </div>
@@ -364,6 +364,7 @@ It is auto-initialized by `framework/carousel.js` and supports multiple instance
 
 - keep one authored slide per highlight
 - always provide a clear `data-highlights-label`
+- use the shared spacing utilities on `.highlights-carousel-rail` when the bullets or toggle need more interior breathing room
 - use static media, inline video, or custom art inside each slide
 - include the script on any page that uses the primitive
 

@@ -33,7 +33,7 @@ class HighlightsCarousel {
 
     this.root.dataset.highlightsCarouselReady = "true";
     this.root.style.setProperty("--highlights-count", String(this.slides.length));
-    this.root.classList.add("is-paused");
+    this.syncRootState();
 
     this.handleIntersection = this.handleIntersection.bind(this);
     this.handleVisibilityChange = this.handleVisibilityChange.bind(this);
@@ -91,6 +91,12 @@ class HighlightsCarousel {
     this.toggleButton.disabled = this.reducedMotion.matches;
     this.syncToggleLabel();
     this.buildTabs();
+  }
+
+  syncRootState() {
+    this.root.classList.toggle("is-playing", this.isPlaying);
+    this.root.classList.toggle("is-ended", this.isEnded);
+    this.root.classList.toggle("is-paused", !this.isPlaying && !this.isEnded);
   }
 
   buildTabs() {
@@ -194,8 +200,9 @@ class HighlightsCarousel {
     if (this.reducedMotion.matches) {
       this.pause({ userInitiated: false });
       this.userPaused = true;
-      this.root.classList.remove("is-playing", "is-ended");
-      this.root.classList.add("is-paused", "is-reduced-motion");
+      this.isEnded = false;
+      this.syncRootState();
+      this.root.classList.add("is-reduced-motion");
       this.toggleButton.disabled = true;
       this.syncToggleLabel();
       return;
@@ -266,6 +273,7 @@ class HighlightsCarousel {
     this.stopAutoplayClock();
 
     this.isEnded = false;
+    this.syncRootState();
     this.currentIndex = nextIndex;
     this.renderSlide(nextIndex, { resetProgress });
 
@@ -315,16 +323,14 @@ class HighlightsCarousel {
     }
 
     this.isPlaying = true;
-    this.root.classList.add("is-playing");
-    this.root.classList.remove("is-paused", "is-ended");
+    this.syncRootState();
     this.syncToggleLabel();
     this.startAutoplayClock();
   }
 
   pause({ userInitiated = false } = {}) {
     if (!this.isPlaying && !this.isEnded) {
-      this.root.classList.add("is-paused");
-      this.root.classList.remove("is-playing");
+      this.syncRootState();
       this.syncToggleLabel();
       return;
     }
@@ -336,15 +342,14 @@ class HighlightsCarousel {
       this.userPaused = true;
     }
 
-    this.root.classList.add("is-paused");
-    this.root.classList.remove("is-playing");
+    this.syncRootState();
     this.syncToggleLabel();
   }
 
   replay() {
     this.userPaused = false;
     this.isEnded = false;
-    this.root.classList.remove("is-ended");
+    this.syncRootState();
     this.goTo(0, { userInitiated: false, focusTab: false, resetProgress: true });
   }
 
@@ -354,8 +359,7 @@ class HighlightsCarousel {
     this.isEnded = true;
     this.progress = 1;
     this.setTabProgress(this.generatedTabs[this.currentIndex], 1);
-    this.root.classList.remove("is-playing", "is-paused");
-    this.root.classList.add("is-ended");
+    this.syncRootState();
     this.syncToggleLabel();
   }
 
