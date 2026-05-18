@@ -390,6 +390,33 @@ textarea {
   background: var(--color-surface-muted);
 }
 
+.spacing-demo-grid {
+  align-items: start;
+}
+
+.spacing-demo-card {
+  align-content: start;
+}
+
+.spacing-demo-surface {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: calc(var(--radius-large) - 10px);
+  background: var(--color-surface-muted);
+}
+
+.spacing-demo-surface .title {
+  font-size: var(--step-1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.spacing-demo-surface .body {
+  font-size: var(--step-0);
+  line-height: 1.45;
+}
+
 .hero {
   padding: var(--space-7) 0 var(--space-10);
 }
@@ -748,6 +775,10 @@ textarea {
   gap: var(--space-5);
 }
 
+.editorial-pair {
+  align-items: center;
+}
+
 .gradient-samples {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -847,7 +878,7 @@ textarea {
 }
 
 .quote-panel .title {
-  max-width: 12ch;
+  max-width: 14ch;
 }
 
 .quote-panel .caption {
@@ -1238,6 +1269,10 @@ textarea {
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  .editorial-pair {
+    align-items: start;
   }
 
   .card,

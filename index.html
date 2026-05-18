@@ -420,27 +420,41 @@
             </p>
           </div>
 
-          <div class="grid grid-3 gap-5">
-            <article class="card stack gap-2">
+          <div class="grid grid-3 gap-5 spacing-demo-grid">
+            <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">Compact stack</p>
-              <h3 class="title">Use smaller vertical rhythm when the content is short and related.</h3>
-              <p class="body">`gap-2` keeps a tight cluster readable without letting the card feel cramped.</p>
+              <h3 class="title">Keep related copy tight when the ideas belong to the same thought.</h3>
+              <p class="body">Use `gap-2` inside a stack when labels, headings, and short support copy need a compact rhythm.</p>
+              <div class="spacing-demo-surface stack gap-2">
+                <p class="caption">Utility sample</p>
+                <p class="title">Short feature block</p>
+                <p class="body">`gap-2` keeps the grouping close without turning the card into a dense wall of text.</p>
+              </div>
             </article>
 
-            <article class="card stack gap-5 pad-7">
+            <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">All-around space</p>
-              <h3 class="title">Increase interior breathing room without creating a new card variant.</h3>
-              <p class="body">`pad-7` expands the card evenly on both axes and keeps the utility intent obvious.</p>
+              <h3 class="title">Add more interior room without changing the card component itself.</h3>
+              <p class="body">Use `pad-7` on a nested surface when a block needs more breathing room but should keep the same typography pace.</p>
+              <div class="spacing-demo-surface pad-7 stack gap-3">
+                <p class="caption">Utility sample</p>
+                <p class="title">Roomier callout</p>
+                <p class="body">`pad-7` increases edge space evenly, which makes the surface feel calmer without pushing every card title down.</p>
+              </div>
             </article>
 
-            <article class="card stack gap-4 pad-x-7 pad-y-5">
+            <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">Axis control</p>
-              <h3 class="title">Set horizontal and vertical spacing independently when the composition needs it.</h3>
-              <div class="grid grid-2 gap-x-6 gap-y-3">
-                <p class="body">`pad-x-7` gives wider side margins for longer lines.</p>
-                <p class="body">`pad-y-5` keeps the block balanced without overstretching it.</p>
-                <p class="body">`gap-x-6` opens the columns up.</p>
-                <p class="body">`gap-y-3` keeps the rows a little tighter.</p>
+              <h3 class="title">Separate horizontal and vertical spacing when the content needs different pressures.</h3>
+              <p class="body">Use axis-specific utilities on the sample surface so readers can compare the effect without re-learning the card layout.</p>
+              <div class="spacing-demo-surface pad-x-7 pad-y-5 stack gap-3">
+                <p class="caption">Utility sample</p>
+                <div class="grid grid-2 gap-x-6 gap-y-3">
+                  <p class="body">`pad-x-7` widens the side margins for longer lines.</p>
+                  <p class="body">`pad-y-5` keeps the top and bottom more restrained.</p>
+                  <p class="body">`gap-x-6` opens the columns up.</p>
+                  <p class="body">`gap-y-3` keeps the rows from drifting apart.</p>
+                </div>
               </div>
             </article>
           </div>
@@ -488,7 +502,7 @@
       </section>
 
       <section class="section section-muted">
-        <div class="container grid grid-2 gap-5">
+        <div class="container grid grid-2 gap-5 editorial-pair">
           <div class="stack gap-4">
             <p class="eyebrow">Content section</p>
             <h2 class="title">Light grey sections let the white cards feel deliberate.</h2>
@@ -581,7 +595,7 @@
       </section>
 
       <section class="section gradient-section gradient-mint">
-        <div class="container grid grid-2 gap-5">
+        <div class="container grid grid-2 gap-5 editorial-pair">
           <article class="card card-large quote-panel">
             <p class="quote-mark">“</p>
             <p class="title">
@@ -685,7 +699,7 @@
       <section class="section-tight" id="build">
         <div class="container">
           <article class="card card-large cta-panel">
-            <div class="grid grid-2 gap-5">
+            <div class="grid grid-2 gap-5 editorial-pair">
               <div class="stack gap-4">
                 <p class="eyebrow">Build with the framework</p>
                 <h2 class="title">Simple class names, disciplined defaults, and enough flexibility for a full editorial page.</h2>
