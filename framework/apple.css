@@ -16,6 +16,16 @@
   --color-glass-border: rgba(255, 255, 255, 0.7);
   --color-accent: #0071e3;
   --color-accent-soft: #4f8df6;
+  --color-button-secondary: #e8ebf1;
+  --color-button-secondary-hover: #dde2ea;
+  --color-button-blue: #0071e3;
+  --color-button-blue-hover: #0077ed;
+  --color-button-green: #28a745;
+  --color-button-green-hover: #22963e;
+  --color-button-yellow: #f5c242;
+  --color-button-yellow-hover: #efb72d;
+  --color-button-red: #d84d45;
+  --color-button-red-hover: #cb433c;
   --color-gradient-sky-1: #356dff;
   --color-gradient-sky-2: #6ca8ff;
   --color-gradient-sky-3: #69e0ff;
@@ -435,13 +445,24 @@ textarea {
 }
 
 .button {
+  --button-tone: var(--color-text);
+  --button-tone-hover: #2f2f33;
+  --button-tone-contrast: var(--color-white);
+  --button-fill: var(--button-tone);
+  --button-fill-hover: var(--button-tone-hover);
+  --button-ink: var(--button-tone-contrast);
+  --button-ink-hover: var(--button-tone-contrast);
+  --button-border: transparent;
+  --button-border-hover: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 3rem;
   padding: 0 1.2rem;
   border-radius: 999px;
-  border: 0;
+  border: 1px solid var(--button-border);
+  background: var(--button-fill);
+  color: var(--button-ink);
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
@@ -449,18 +470,61 @@ textarea {
 .button:focus-visible,
 .link-arrow:hover,
 .link-arrow:focus-visible {
+  background: var(--button-fill-hover);
+  color: var(--button-ink-hover);
+  border-color: var(--button-border-hover);
   transform: translateY(-1px);
   outline: none;
 }
 
 .button-primary {
-  background: var(--color-text);
-  color: var(--color-white);
+  --button-tone: var(--color-text);
+  --button-tone-hover: #2f2f33;
+  --button-tone-contrast: var(--color-white);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--color-text);
+  --button-tone: var(--color-button-secondary);
+  --button-tone-hover: var(--color-button-secondary-hover);
+  --button-tone-contrast: var(--color-text);
+}
+
+.button-secondary.button-outline {
+  --button-ink: var(--color-text-muted);
+  --button-border: var(--color-border-strong);
+}
+
+.button-blue {
+  --button-tone: var(--color-button-blue);
+  --button-tone-hover: var(--color-button-blue-hover);
+  --button-tone-contrast: var(--color-white);
+}
+
+.button-green {
+  --button-tone: var(--color-button-green);
+  --button-tone-hover: var(--color-button-green-hover);
+  --button-tone-contrast: var(--color-white);
+}
+
+.button-yellow {
+  --button-tone: var(--color-button-yellow);
+  --button-tone-hover: var(--color-button-yellow-hover);
+  --button-tone-contrast: var(--color-text);
+}
+
+.button-red {
+  --button-tone: var(--color-button-red);
+  --button-tone-hover: var(--color-button-red-hover);
+  --button-tone-contrast: var(--color-white);
+}
+
+.button-outline {
+  --button-fill: transparent;
+  --button-fill-hover: var(--button-tone-hover);
+  --button-ink: var(--button-tone);
+  --button-ink-hover: var(--button-tone-contrast);
+  --button-border: var(--button-tone);
+  --button-border-hover: var(--button-tone-hover);
 }
 
 .glass {
@@ -636,13 +700,21 @@ textarea {
 }
 
 .inverted .button-primary {
-  background: var(--color-white);
-  color: var(--color-text);
+  --button-tone: var(--color-white);
+  --button-tone-hover: #e8e8ed;
+  --button-tone-contrast: var(--color-text);
 }
 
 .inverted .button-secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--color-text-inverted);
+  --button-tone: rgba(255, 255, 255, 0.18);
+  --button-tone-hover: rgba(255, 255, 255, 0.24);
+  --button-tone-contrast: var(--color-text-inverted);
+}
+
+.inverted .button-secondary.button-outline {
+  --button-ink: var(--color-text-inverted);
+  --button-border: rgba(245, 245, 247, 0.42);
+  --button-border-hover: rgba(245, 245, 247, 0.42);
 }
 
 .inverted .link-arrow {
@@ -773,6 +845,21 @@ textarea {
 .gradient-showcase {
   display: grid;
   gap: var(--space-5);
+}
+
+.button-showcase {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.button-samples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.button-sample {
+  min-height: 100%;
 }
 
 .editorial-pair {
@@ -1239,7 +1326,8 @@ textarea {
   .feature-grid,
   .bento,
   .profile-grid,
-  .gradient-samples {
+  .gradient-samples,
+  .button-samples {
     grid-template-columns: 1fr;
   }
 

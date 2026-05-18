@@ -162,9 +162,22 @@ These help create the overall page rhythm seen in the demo. They are intended fo
 - `button`
 - `button-primary`
 - `button-secondary`
+- `button-blue`
+- `button-green`
+- `button-yellow`
+- `button-red`
+- `button-outline`
 - `link-arrow`
 
 Keep actions understated. On Apple-style pages, the typography and spacing should remain more prominent than the buttons.
+
+Recommended use:
+
+- pair `button` with one tone class for the default filled style
+- add `button-outline` when you want the outlined version that fills on hover
+- use `button-primary` for the strongest neutral action
+- use `button-secondary` for a softer neutral action on light or inverted surfaces
+- use the color variants only when the content genuinely benefits from the extra emphasis
 
 ### Optional emphasis
 
