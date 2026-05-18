@@ -63,7 +63,16 @@ The `:root` block contains the design tokens.
 
 ### Spacing
 
-Use the `--space-*` scale for section padding, grid gaps, and card interiors. The larger sizes are important because the framework depends on whitespace.
+Use the `--space-*` scale for section padding, gaps, and card interiors. The larger sizes are important because the framework depends on whitespace.
+
+The framework now exposes spacing through dedicated utility classes so layout primitives can stay focused on structure:
+
+- `gap-1` through `gap-8` for spacing in both directions
+- `gap-x-1` through `gap-x-8` for horizontal spacing only
+- `gap-y-1` through `gap-y-8` for vertical spacing only
+- `pad-1` through `pad-8` for padding on all sides
+- `pad-x-1` through `pad-x-8` for horizontal padding only
+- `pad-y-1` through `pad-y-8` for vertical padding only
 
 ### Radius
 
@@ -86,6 +95,23 @@ The `--step-*` tokens define the type scale. Keep the display and title sizes pr
 - `stack`
 
 These are the foundation of the framework. Start with them before you add component-specific classes.
+
+`grid` and `stack` no longer set spacing on their own. Pair them with a spacing utility so the breathing room is explicit in the markup.
+
+### Spacing Utilities
+
+- `gap-*`
+- `gap-x-*`
+- `gap-y-*`
+- `pad-*`
+- `pad-x-*`
+- `pad-y-*`
+
+Recommended use:
+
+- use `gap-*` on `stack` and `grid` containers to control overall rhythm
+- use `gap-x-*` and `gap-y-*` when columns and rows should not share the same spacing
+- use `pad-*` on cards, sections, and wrappers when the default interior spacing needs to change without adding a new component class
 
 ### Typography
 
@@ -186,7 +212,7 @@ This is the best starting point for a new page:
   </section>
 
   <section class="section">
-    <div class="container stack">
+    <div class="container stack gap-5">
       ...
     </div>
   </section>
@@ -204,7 +230,7 @@ This structure gives you:
 
 ### 1. Start with whitespace
 
-Lay out the page with `container`, `section`, and `stack` before thinking about accents.
+Lay out the page with `container`, `section`, and `stack`, then add a `gap-*` utility before thinking about accents.
 
 ### 2. Let type establish the hierarchy
 
@@ -319,28 +345,28 @@ It is auto-initialized by `framework/highlights-carousel.js` and supports multip
 
 ```html
 <section class="section">
-  <div class="container stack">
+  <div class="container stack gap-5">
     <p class="eyebrow">Overview</p>
     <h2 class="title">A quiet section with clear hierarchy.</h2>
     <p class="lead">Let the layout and typography do most of the work.</p>
 
-    <div class="grid grid-2">
-      <article class="card card-muted">
+    <div class="grid grid-2 gap-5">
+      <article class="card card-muted stack gap-4">
         <h3 class="title">Muted card</h3>
         <p class="body">Soft grey surfaces help break up long pages.</p>
       </article>
 
-      <article class="card gradient-card gradient-sky">
+      <article class="card gradient-card gradient-sky stack gap-4">
         <h3 class="title">Highlighted card</h3>
         <p class="body">Use this only when the content deserves extra emphasis.</p>
       </article>
 
-      <article class="card bordered">
+      <article class="card bordered stack gap-4">
         <h3 class="title">Bordered card</h3>
         <p class="body">Add a border only when the page benefits from that extra definition.</p>
       </article>
 
-      <article class="card inverted">
+      <article class="card inverted stack gap-4">
         <h3 class="title">Inverted card</h3>
         <p class="body">Use the same content classes on a darker surface without changing the markup structure.</p>
       </article>

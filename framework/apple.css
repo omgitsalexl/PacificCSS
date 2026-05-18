@@ -122,7 +122,6 @@ textarea {
 
 .grid {
   display: grid;
-  gap: var(--space-5);
 }
 
 .grid-2 {
@@ -135,7 +134,198 @@ textarea {
 
 .stack {
   display: grid;
+}
+
+.gap-1 {
+  gap: var(--space-1);
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-3 {
+  gap: var(--space-3);
+}
+
+.gap-4 {
   gap: var(--space-4);
+}
+
+.gap-5 {
+  gap: var(--space-5);
+}
+
+.gap-6 {
+  gap: var(--space-6);
+}
+
+.gap-7 {
+  gap: var(--space-7);
+}
+
+.gap-8 {
+  gap: var(--space-8);
+}
+
+.gap-x-1 {
+  column-gap: var(--space-1);
+}
+
+.gap-x-2 {
+  column-gap: var(--space-2);
+}
+
+.gap-x-3 {
+  column-gap: var(--space-3);
+}
+
+.gap-x-4 {
+  column-gap: var(--space-4);
+}
+
+.gap-x-5 {
+  column-gap: var(--space-5);
+}
+
+.gap-x-6 {
+  column-gap: var(--space-6);
+}
+
+.gap-x-7 {
+  column-gap: var(--space-7);
+}
+
+.gap-x-8 {
+  column-gap: var(--space-8);
+}
+
+.gap-y-1 {
+  row-gap: var(--space-1);
+}
+
+.gap-y-2 {
+  row-gap: var(--space-2);
+}
+
+.gap-y-3 {
+  row-gap: var(--space-3);
+}
+
+.gap-y-4 {
+  row-gap: var(--space-4);
+}
+
+.gap-y-5 {
+  row-gap: var(--space-5);
+}
+
+.gap-y-6 {
+  row-gap: var(--space-6);
+}
+
+.gap-y-7 {
+  row-gap: var(--space-7);
+}
+
+.gap-y-8 {
+  row-gap: var(--space-8);
+}
+
+.pad-1 {
+  padding: var(--space-1);
+}
+
+.pad-2 {
+  padding: var(--space-2);
+}
+
+.pad-3 {
+  padding: var(--space-3);
+}
+
+.pad-4 {
+  padding: var(--space-4);
+}
+
+.pad-5 {
+  padding: var(--space-5);
+}
+
+.pad-6 {
+  padding: var(--space-6);
+}
+
+.pad-7 {
+  padding: var(--space-7);
+}
+
+.pad-8 {
+  padding: var(--space-8);
+}
+
+.pad-x-1 {
+  padding-inline: var(--space-1);
+}
+
+.pad-x-2 {
+  padding-inline: var(--space-2);
+}
+
+.pad-x-3 {
+  padding-inline: var(--space-3);
+}
+
+.pad-x-4 {
+  padding-inline: var(--space-4);
+}
+
+.pad-x-5 {
+  padding-inline: var(--space-5);
+}
+
+.pad-x-6 {
+  padding-inline: var(--space-6);
+}
+
+.pad-x-7 {
+  padding-inline: var(--space-7);
+}
+
+.pad-x-8 {
+  padding-inline: var(--space-8);
+}
+
+.pad-y-1 {
+  padding-block: var(--space-1);
+}
+
+.pad-y-2 {
+  padding-block: var(--space-2);
+}
+
+.pad-y-3 {
+  padding-block: var(--space-3);
+}
+
+.pad-y-4 {
+  padding-block: var(--space-4);
+}
+
+.pad-y-5 {
+  padding-block: var(--space-5);
+}
+
+.pad-y-6 {
+  padding-block: var(--space-6);
+}
+
+.pad-y-7 {
+  padding-block: var(--space-7);
+}
+
+.pad-y-8 {
+  padding-block: var(--space-8);
 }
 
 .eyebrow {
