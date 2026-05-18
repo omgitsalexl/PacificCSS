@@ -24,6 +24,7 @@
   --color-button-green-hover: #22963e;
   --color-button-yellow: #f5c242;
   --color-button-yellow-hover: #efb72d;
+  --color-button-yellow-outline: #9a6200;
   --color-button-red: #d84d45;
   --color-button-red-hover: #cb433c;
   --color-gradient-sky-1: #356dff;
@@ -447,13 +448,14 @@ textarea {
 .button {
   --button-tone: var(--color-text);
   --button-tone-hover: #2f2f33;
+  --button-outline-tone: var(--button-tone);
   --button-tone-contrast: var(--color-white);
   --button-fill: var(--button-tone);
-  --button-fill-hover: var(--button-tone-hover);
+  --button-fill-hover: var(--button-fill);
   --button-ink: var(--button-tone-contrast);
-  --button-ink-hover: var(--button-tone-contrast);
+  --button-ink-hover: var(--button-ink);
   --button-border: transparent;
-  --button-border-hover: transparent;
+  --button-border-hover: var(--button-border);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -509,6 +511,7 @@ textarea {
 .button-yellow {
   --button-tone: var(--color-button-yellow);
   --button-tone-hover: var(--color-button-yellow-hover);
+  --button-outline-tone: var(--color-button-yellow-outline);
   --button-tone-contrast: var(--color-text);
 }
 
@@ -520,11 +523,11 @@ textarea {
 
 .button-outline {
   --button-fill: transparent;
-  --button-fill-hover: var(--button-tone-hover);
-  --button-ink: var(--button-tone);
+  --button-fill-hover: var(--button-tone);
+  --button-ink: var(--button-outline-tone);
   --button-ink-hover: var(--button-tone-contrast);
-  --button-border: var(--button-tone);
-  --button-border-hover: var(--button-tone-hover);
+  --button-border: var(--button-outline-tone);
+  --button-border-hover: var(--button-tone);
 }
 
 .glass {
