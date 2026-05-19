@@ -16,6 +16,7 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 
 - [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
 - [`framework/pacific.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/pacific.css) is the framework stylesheet
+- [`framework/gradients.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/gradients.css) is the optional gradient add-on stylesheet
 - [`framework/navigation.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.css) is the optional navigation stylesheet
 - [`framework/navigation.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.js) enhances the shared navigation dropdown and mobile accordion behavior
 - [`framework/carousel.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.css) is the optional carousel stylesheet
@@ -47,9 +48,10 @@ The core stylesheet is organized in this order:
 5. surfaces and cards
 6. page composition patterns
 7. buttons and links
-8. optional highlight treatments
-9. utilities
-10. responsive rules
+8. utilities
+9. responsive rules
+
+Gradient presets live in their own optional stylesheet so pages that want a quieter baseline can skip them entirely.
 
 Navigation lives in its own optional stylesheet and script so pages that do not need the richer dropdown behavior can skip both files.
 
@@ -64,7 +66,7 @@ The `:root` block contains the design tokens.
 - `--color-text` and `--color-text-muted` define contrast
 - `--color-border` keeps edges readable on pale surfaces
 - borders are opt-in through the `bordered` utility rather than built into the default surfaces
-- `--color-gradient-*` support reusable Apple-like mesh gradient presets
+- `--color-gradient-*` live in the optional gradient add-on and support reusable Apple-like mesh gradient presets
 
 ### Spacing
 
@@ -200,9 +202,21 @@ Recommended use:
 - use `button-secondary` for a softer neutral action on light or inverted surfaces
 - use the color variants only when the content genuinely benefits from the extra emphasis
 
-### Optional emphasis
+### Optional add-ons
+
+Load the gradient add-on after the core stylesheet:
+
+```html
+<link rel="stylesheet" href="framework/pacific.css" />
+<link rel="stylesheet" href="framework/gradients.css" />
+```
+
+Gradient classes are only available when `framework/gradients.css` is present.
+
+### Gradient add-on
 
 - `text-gradient`
+- `gradient-card`
 - `gradient-section`
 - `gradient-sky`
 - `gradient-iris`
@@ -210,16 +224,27 @@ Recommended use:
 - `gradient-mint`
 - `gradient-sunset`
 - `gradient-berry`
-- `glass`
-- `glass-bar`
-- `glass-pill`
-- `glass-round`
+- `gradient-lagoon`
+- `gradient-orchid`
+- `gradient-coral`
+- `gradient-lime`
+- `gradient-aurora`
+- `gradient-citrine`
+
+The newer presets are a little more vibrant than the original six, but they are still tuned to stay supportive rather than loud.
 
 Use a gradient preset together with an application class:
 
 - `text-gradient gradient-sky`
-- `gradient-card gradient-iris`
-- `gradient-section gradient-mint`
+- `gradient-card gradient-orchid`
+- `gradient-section gradient-aurora`
+
+### Glass utilities
+
+- `glass`
+- `glass-bar`
+- `glass-pill`
+- `glass-round`
 
 Glass classes work the same way:
 
@@ -302,6 +327,12 @@ Suggested presets:
 - `gradient-mint` for a fresh full-width background treatment
 - `gradient-sunset` for the most vivid warm feature moment
 - `gradient-berry` for a deeper premium contrast accent
+- `gradient-lagoon` for a brighter blue-green product accent
+- `gradient-orchid` for a richer magenta-violet editorial moment
+- `gradient-coral` for a friendlier warm highlight
+- `gradient-lime` for a sunnier green accent
+- `gradient-aurora` for the boldest cool-to-warm chapter break
+- `gradient-citrine` for a bright golden highlight
 
 If too many elements use gradients, the page stops feeling Apple-like.
 
@@ -572,12 +603,12 @@ When extending the framework, prefer stacking over squeezing.
 
 ### To shift the page warmer or cooler
 
-Adjust the surface and gradient tokens first.
+Adjust the surface tokens in `framework/pacific.css` and the gradient tokens in `framework/gradients.css` first.
 
 ```css
 :root {
   --color-surface-muted: #f2f0ec;
-  --color-gradient-peach-end: #ffd4b0;
+  --color-gradient-peach-3: #ffd4b0;
   --color-gradient-sunset-2: #ff5f98;
 }
 ```
