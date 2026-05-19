@@ -16,6 +16,8 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 
 - [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
 - [`framework/apple.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/apple.css) is the framework stylesheet
+- [`framework/navigation.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.css) is the optional navigation stylesheet
+- [`framework/navigation.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.js) enhances the shared navigation dropdown and mobile accordion behavior
 - [`framework/carousel.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.css) is the optional carousel stylesheet
 - [`framework/carousel.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.js) auto-initializes the highlights carousel primitive
 - [`DOCUMENTATION.md`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/DOCUMENTATION.md) is this guide
@@ -36,7 +38,7 @@ Do not treat every section like a hero. The Apple-like feeling comes from restra
 
 ## CSS Structure
 
-The stylesheet is organized in this order:
+The core stylesheet is organized in this order:
 
 1. tokens
 2. reset and base styles
@@ -48,6 +50,8 @@ The stylesheet is organized in this order:
 8. optional highlight treatments
 9. utilities
 10. responsive rules
+
+Navigation lives in its own optional stylesheet and script so pages that do not need the richer dropdown behavior can skip both files.
 
 ## Tokens
 
@@ -163,6 +167,17 @@ These help create the overall page rhythm seen in the demo. They are intended fo
 
 The highlights carousel is intentionally split out from the core framework so pages that do not use it can skip both its stylesheet and its JavaScript.
 
+### Optional navigation primitive
+
+- `navigation-shell`
+- `nav`
+- `nav-links`
+- `nav-link`
+- `nav-item`
+- `nav-dropdown`
+
+The navigation system is also intentionally split out from the core framework. Use it when the header needs a mix of direct links and grouped submenu content.
+
 ### Actions
 
 - `button`
@@ -218,8 +233,12 @@ This is the best starting point for a new page:
 
 ```html
 <header class="site-header">
-  <div class="container nav">
-    ...
+  <div class="container">
+    <div class="navigation-shell" data-navigation>
+      <div class="nav glass glass-bar bordered">
+        ...
+      </div>
+    </div>
   </div>
 </header>
 
@@ -297,6 +316,93 @@ Good uses:
 - compact round icon controls
 
 Avoid using glass on every large card or every section. The effect is strongest when it appears only in a few focused places.
+
+## Navigation
+
+The optional navigation primitive supports two kinds of top-level items:
+
+- plain links for direct destinations
+- button triggers for grouped submenus
+
+Load it only on pages that need richer navigation:
+
+```html
+<link rel="stylesheet" href="framework/navigation.css" />
+<script src="framework/navigation.js"></script>
+```
+
+### Behavior
+
+- desktop submenu panels open in one shared dropdown card below the main nav bar
+- the shared dropdown uses `inverted` so it reads as a separate surface
+- opening a submenu fades and settles the card into view
+- switching between submenu triggers blends panel content instead of hard-cutting it
+- mobile collapses into stacked accordion sections instead of a floating dropdown
+- `Escape` closes the current submenu and returns focus to its trigger
+- reduced-motion users get the same structure with minimal animation
+
+### Markup contract
+
+```html
+<div class="navigation-shell" data-navigation>
+  <div class="nav glass glass-bar bordered">
+    <a class="nav-brand" href="#top">Brand</a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#overview">Overview</a>
+
+      <div class="nav-item">
+        <button
+          class="nav-link nav-link-trigger"
+          type="button"
+          data-nav-trigger
+          data-nav-panel="nav-panel-patterns"
+          aria-expanded="false"
+          aria-controls="nav-panel-patterns"
+        >
+          Patterns
+        </button>
+
+        <div class="nav-mobile-panel">
+          <div class="nav-mobile-group">
+            <p class="eyebrow">Layout</p>
+            <a href="#patterns">Pattern overview</a>
+            <a href="#spacing">Spacing rhythm</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="nav-dropdown card card-large inverted bordered" data-nav-dropdown hidden>
+    <div class="nav-dropdown-inner" data-nav-dropdown-inner>
+      <section class="nav-dropdown-panel" id="nav-panel-patterns" data-nav-panel aria-label="Patterns">
+        <div class="nav-dropdown-column">
+          <p class="eyebrow">Layout</p>
+          <a class="nav-dropdown-link nav-dropdown-link-primary" href="#patterns">Pattern overview</a>
+          <a class="nav-dropdown-link" href="#spacing">Spacing rhythm</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+```
+
+### Authoring notes
+
+- use a plain anchor when the top-level item goes directly to one place
+- use a button trigger only when the extra grouping makes the navigation easier to scan
+- keep submenu content to grouped lists of links with optional short supporting copy
+- keep the mobile panel content aligned with the shared desktop dropdown content
+- include one `data-nav-panel` section for each trigger
+- keep the dropdown content width within the same `container` as the top bar
+
+### Accessibility notes
+
+- submenu parents are buttons, not placeholder links
+- the script maintains `aria-expanded` on each trigger
+- the desktop dropdown closes on outside interaction and `Escape`
+- mobile accordion sections can be opened and closed with the same trigger buttons
 
 ## Mesh Gradient Notes
 

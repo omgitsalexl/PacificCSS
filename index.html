@@ -9,26 +9,122 @@
       content="A light-first CSS framework inspired by Apple editorial web design, with spacious typography, soft cards, and restrained gradient emphasis."
     />
     <link rel="stylesheet" href="framework/apple.css" />
+    <link rel="stylesheet" href="framework/navigation.css" />
     <link rel="stylesheet" href="framework/carousel.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container">
-        <div class="nav glass glass-bar bordered">
-          <a class="nav-brand" href="#top">Apple Editorial CSS</a>
-          <nav class="nav-links" aria-label="Primary">
-            <a href="#overview">Overview</a>
-            <a href="#highlights">Highlights</a>
-            <a href="#patterns">Patterns</a>
-            <a href="#buttons">Buttons</a>
-            <a href="#spacing">Spacing</a>
-            <a href="#gradients">Gradients</a>
-            <a href="#glass">Glass</a>
-            <a href="#borders">Borders</a>
-            <a href="#inversion">Inversion</a>
-            <a href="#community">Community</a>
-            <a href="#build">Build</a>
-          </nav>
+        <div class="navigation-shell" data-navigation>
+          <div class="nav glass glass-bar bordered">
+            <a class="nav-brand" href="#top">Apple Editorial CSS</a>
+            <nav class="nav-links" aria-label="Primary">
+              <a class="nav-link" href="#overview">Overview</a>
+              <a class="nav-link" href="#highlights">Highlights</a>
+              <div class="nav-item">
+                <button
+                  class="nav-link nav-link-trigger"
+                  type="button"
+                  data-nav-trigger
+                  data-nav-panel="nav-panel-patterns"
+                  aria-expanded="false"
+                  aria-controls="nav-panel-patterns"
+                >
+                  Patterns
+                </button>
+                <div class="nav-mobile-panel" id="nav-panel-patterns-mobile">
+                  <div class="nav-mobile-group">
+                    <p class="eyebrow">Layout</p>
+                    <a href="#patterns">Pattern overview</a>
+                    <a href="#spacing">Spacing rhythm</a>
+                    <a href="#glass">Glass accents</a>
+                  </div>
+                  <div class="nav-mobile-group">
+                    <p class="eyebrow">Surfaces</p>
+                    <a href="#gradients">Gradient moments</a>
+                    <a href="#borders">Border definition</a>
+                    <a href="#inversion">Inverted sections</a>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-item">
+                <button
+                  class="nav-link nav-link-trigger"
+                  type="button"
+                  data-nav-trigger
+                  data-nav-panel="nav-panel-build"
+                  aria-expanded="false"
+                  aria-controls="nav-panel-build"
+                >
+                  Build
+                </button>
+                <div class="nav-mobile-panel" id="nav-panel-build-mobile">
+                  <div class="nav-mobile-group">
+                    <p class="eyebrow">Guides</p>
+                    <a href="DOCUMENTATION.md">Documentation</a>
+                    <a href="framework/apple.css">Core stylesheet</a>
+                    <a href="framework/navigation.css">Navigation styles</a>
+                  </div>
+                  <div class="nav-mobile-group">
+                    <p class="eyebrow">Optional primitives</p>
+                    <a href="framework/carousel.css">Carousel CSS</a>
+                    <a href="framework/carousel.js">Carousel script</a>
+                    <a href="framework/navigation.js">Navigation script</a>
+                  </div>
+                </div>
+              </div>
+              <a class="nav-link" href="#community">Community</a>
+              <a class="nav-link" href="#build">Start here</a>
+            </nav>
+          </div>
+
+          <div class="nav-dropdown card card-large inverted bordered" data-nav-dropdown hidden>
+            <div class="nav-dropdown-inner" data-nav-dropdown-inner>
+              <section class="nav-dropdown-panel" id="nav-panel-patterns" data-nav-panel aria-label="Patterns">
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Layout</p>
+                  <a class="nav-dropdown-link nav-dropdown-link-primary" href="#patterns">Pattern overview</a>
+                  <a class="nav-dropdown-link" href="#spacing">Spacing rhythm</a>
+                  <a class="nav-dropdown-link" href="#glass">Glass accents</a>
+                </div>
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Surfaces</p>
+                  <a class="nav-dropdown-link nav-dropdown-link-primary" href="#gradients">Gradient moments</a>
+                  <a class="nav-dropdown-link" href="#borders">Border definition</a>
+                  <a class="nav-dropdown-link" href="#inversion">Inverted sections</a>
+                </div>
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Use it well</p>
+                  <p class="body">
+                    Start with quiet layout primitives, then introduce gradients or darker surfaces only where hierarchy needs
+                    help.
+                  </p>
+                </div>
+              </section>
+
+              <section class="nav-dropdown-panel" id="nav-panel-build" data-nav-panel aria-label="Build">
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Guides</p>
+                  <a class="nav-dropdown-link nav-dropdown-link-primary" href="DOCUMENTATION.md">Documentation</a>
+                  <a class="nav-dropdown-link" href="framework/apple.css">Core stylesheet</a>
+                  <a class="nav-dropdown-link" href="framework/navigation.css">Navigation styles</a>
+                </div>
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Optional primitives</p>
+                  <a class="nav-dropdown-link nav-dropdown-link-primary" href="framework/carousel.css">Carousel CSS</a>
+                  <a class="nav-dropdown-link" href="framework/carousel.js">Carousel script</a>
+                  <a class="nav-dropdown-link" href="framework/navigation.js">Navigation script</a>
+                </div>
+                <div class="nav-dropdown-column">
+                  <p class="eyebrow">Authoring</p>
+                  <p class="body">
+                    Use plain anchors for direct destinations and button triggers only when a grouped submenu makes the nav
+                    easier to scan.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -801,12 +897,13 @@
     <footer class="footer">
       <div class="container footer-row">
         <p class="caption">Apple Editorial CSS demo template</p>
-        <div class="nav-links">
+        <div class="footer-links">
           <a href="#top">Back to top</a>
           <a href="DOCUMENTATION.md">Documentation</a>
         </div>
       </div>
     </footer>
     <script src="framework/carousel.js"></script>
+    <script src="framework/navigation.js"></script>
   </body>
 </html>

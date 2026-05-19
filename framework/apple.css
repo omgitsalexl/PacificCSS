@@ -689,7 +689,6 @@ textarea {
 .inverted .body,
 .inverted .caption,
 .inverted .profile-role,
-.inverted .nav-links a,
 .inverted .swatch {
   color: var(--color-text-inverted-muted);
 }
@@ -697,8 +696,7 @@ textarea {
 .inverted .display,
 .inverted .title,
 .inverted .profile-name,
-.inverted .card-number,
-.inverted .nav-brand {
+.inverted .card-number {
   color: var(--color-text-inverted);
 }
 
@@ -732,22 +730,6 @@ textarea {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-.site-header {
-  padding: 1.1rem 0 0;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  padding: 0;
-}
-
-.nav-links,
 .button-row,
 .stat-row,
 .footer-row {
@@ -755,42 +737,6 @@ textarea {
   flex-wrap: wrap;
   gap: var(--space-3);
   align-items: center;
-}
-
-.nav-brand {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.4rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  font-size: 0.98rem;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-
-.nav-links {
-  gap: 0.35rem;
-  justify-content: flex-end;
-}
-
-.nav-links a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.4rem;
-  padding: 0 0.8rem;
-  border-radius: 999px;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-}
-
-.nav-links .glass-pill {
-  color: var(--color-text);
 }
 
 .hero-copy {
@@ -1043,6 +989,17 @@ textarea {
   padding-top: var(--space-5);
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+}
+
 @media (max-width: 1100px) {
   .feature-grid,
   .bento,
@@ -1085,16 +1042,6 @@ textarea {
   .card-large,
   .cta-panel {
     padding: var(--space-5);
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.55rem;
-  }
-
-  .nav-links {
-    justify-content: flex-start;
   }
 
   .display,
