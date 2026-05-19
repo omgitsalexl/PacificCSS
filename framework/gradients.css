@@ -1,0 +1,179 @@
+:root {
+  --color-gradient-sky-1: #356dff;
+  --color-gradient-sky-2: #6ca8ff;
+  --color-gradient-sky-3: #69e0ff;
+  --color-gradient-iris-1: #6457ff;
+  --color-gradient-iris-2: #9f6eff;
+  --color-gradient-iris-3: #d28dff;
+  --color-gradient-peach-1: #ff8b55;
+  --color-gradient-peach-2: #ffb15a;
+  --color-gradient-peach-3: #ffd56f;
+  --color-gradient-mint-1: #00a6ff;
+  --color-gradient-mint-2: #38d6c6;
+  --color-gradient-mint-3: #8ef0d2;
+  --color-gradient-sunset-1: #ff5a36;
+  --color-gradient-sunset-2: #ff4fa0;
+  --color-gradient-sunset-3: #ffb067;
+  --color-gradient-berry-1: #5037ff;
+  --color-gradient-berry-2: #b447ff;
+  --color-gradient-berry-3: #ff5ea8;
+  --color-gradient-lagoon-1: #0078ff;
+  --color-gradient-lagoon-2: #00b8ff;
+  --color-gradient-lagoon-3: #47f0d4;
+  --color-gradient-orchid-1: #6f43ff;
+  --color-gradient-orchid-2: #b152ff;
+  --color-gradient-orchid-3: #ff7ad9;
+  --color-gradient-coral-1: #ff6b57;
+  --color-gradient-coral-2: #ff8d6b;
+  --color-gradient-coral-3: #ffc277;
+  --color-gradient-lime-1: #56b800;
+  --color-gradient-lime-2: #8ddc3e;
+  --color-gradient-lime-3: #d8f27a;
+  --color-gradient-aurora-1: #215cff;
+  --color-gradient-aurora-2: #7e6dff;
+  --color-gradient-aurora-3: #ff73c6;
+  --color-gradient-citrine-1: #ff9a24;
+  --color-gradient-citrine-2: #ffc247;
+  --color-gradient-citrine-3: #fff07a;
+}
+
+.gradient-sky {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 14% 8%, rgba(53, 109, 255, 0.95) 0%, rgba(53, 109, 255, 0) 42%),
+    radial-gradient(circle farthest-corner at 80% 26%, rgba(108, 168, 255, 0.82) 0%, rgba(108, 168, 255, 0) 44%),
+    radial-gradient(circle farthest-corner at 62% 84%, rgba(105, 224, 255, 0.88) 0%, rgba(105, 224, 255, 0) 48%),
+    linear-gradient(135deg, #eaf2ff, #f8fbff 62%, #eefcff);
+  --gradient-glow: rgba(126, 215, 255, 0.34);
+}
+
+.gradient-iris {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 8% 18%, rgba(100, 87, 255, 0.94) 0%, rgba(100, 87, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 88% 16%, rgba(159, 110, 255, 0.82) 0%, rgba(159, 110, 255, 0) 42%),
+    radial-gradient(circle farthest-corner at 70% 82%, rgba(210, 141, 255, 0.78) 0%, rgba(210, 141, 255, 0) 46%),
+    linear-gradient(135deg, #f0ecff, #fbf7ff 60%, #f3efff);
+  --gradient-glow: rgba(195, 156, 255, 0.28);
+}
+
+.gradient-peach {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 18% 10%, rgba(255, 139, 85, 0.92) 0%, rgba(255, 139, 85, 0) 40%),
+    radial-gradient(circle farthest-corner at 78% 30%, rgba(255, 177, 90, 0.84) 0%, rgba(255, 177, 90, 0) 42%),
+    radial-gradient(circle farthest-corner at 48% 82%, rgba(255, 213, 111, 0.72) 0%, rgba(255, 213, 111, 0) 48%),
+    linear-gradient(135deg, #fff1e8, #fff9f2 60%, #fff4e6);
+  --gradient-glow: rgba(255, 191, 144, 0.3);
+}
+
+.gradient-mint {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 12% 16%, rgba(0, 166, 255, 0.88) 0%, rgba(0, 166, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 86% 12%, rgba(56, 214, 198, 0.8) 0%, rgba(56, 214, 198, 0) 42%),
+    radial-gradient(circle farthest-corner at 54% 78%, rgba(142, 240, 210, 0.74) 0%, rgba(142, 240, 210, 0) 48%),
+    linear-gradient(135deg, #e8fcff, #f3fffb 60%, #ebfff4);
+  --gradient-glow: rgba(142, 240, 210, 0.26);
+}
+
+.gradient-sunset {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 6% 22%, rgba(255, 90, 54, 0.94) 0%, rgba(255, 90, 54, 0) 40%),
+    radial-gradient(circle farthest-corner at 92% 10%, rgba(255, 79, 160, 0.82) 0%, rgba(255, 79, 160, 0) 42%),
+    radial-gradient(circle farthest-corner at 66% 86%, rgba(255, 176, 103, 0.8) 0%, rgba(255, 176, 103, 0) 48%),
+    linear-gradient(135deg, #fff0ed, #fff6f0 58%, #fff2eb);
+  --gradient-glow: rgba(255, 118, 136, 0.3);
+}
+
+.gradient-berry {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 10% 10%, rgba(80, 55, 255, 0.96) 0%, rgba(80, 55, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 76% 18%, rgba(180, 71, 255, 0.84) 0%, rgba(180, 71, 255, 0) 42%),
+    radial-gradient(circle farthest-corner at 74% 92%, rgba(255, 94, 168, 0.78) 0%, rgba(255, 94, 168, 0) 48%),
+    linear-gradient(135deg, #f5efff, #fbf6ff 58%, #fff0f7);
+  --gradient-glow: rgba(196, 112, 255, 0.32);
+}
+
+.gradient-lagoon {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 4% 18%, rgba(0, 120, 255, 0.98) 0%, rgba(0, 120, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 96% 18%, rgba(0, 184, 255, 0.88) 0%, rgba(0, 184, 255, 0) 44%),
+    radial-gradient(circle farthest-corner at 44% 86%, rgba(71, 240, 212, 0.84) 0%, rgba(71, 240, 212, 0) 48%),
+    linear-gradient(135deg, #e9f7ff, #f6fdff 58%, #ecfff9);
+  --gradient-glow: rgba(91, 219, 255, 0.36);
+}
+
+.gradient-orchid {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 18% 6%, rgba(111, 67, 255, 0.98) 0%, rgba(111, 67, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 90% 26%, rgba(177, 82, 255, 0.86) 0%, rgba(177, 82, 255, 0) 43%),
+    radial-gradient(circle farthest-corner at 54% 96%, rgba(255, 122, 217, 0.8) 0%, rgba(255, 122, 217, 0) 48%),
+    linear-gradient(135deg, #f4eeff, #fdf8ff 58%, #fff0fb);
+  --gradient-glow: rgba(214, 126, 255, 0.34);
+}
+
+.gradient-coral {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 10% 24%, rgba(255, 107, 87, 0.96) 0%, rgba(255, 107, 87, 0) 40%),
+    radial-gradient(circle farthest-corner at 86% 14%, rgba(255, 141, 107, 0.88) 0%, rgba(255, 141, 107, 0) 42%),
+    radial-gradient(circle farthest-corner at 62% 78%, rgba(255, 194, 119, 0.82) 0%, rgba(255, 194, 119, 0) 48%),
+    linear-gradient(135deg, #fff0eb, #fff9f4 58%, #fff4e9);
+  --gradient-glow: rgba(255, 156, 126, 0.34);
+}
+
+.gradient-lime {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 16% 8%, rgba(86, 184, 0, 0.9) 0%, rgba(86, 184, 0, 0) 38%),
+    radial-gradient(circle farthest-corner at 74% 28%, rgba(141, 220, 62, 0.82) 0%, rgba(141, 220, 62, 0) 42%),
+    radial-gradient(circle farthest-corner at 46% 88%, rgba(216, 242, 122, 0.74) 0%, rgba(216, 242, 122, 0) 48%),
+    linear-gradient(135deg, #f4fde9, #fbfff4 58%, #f7ffea);
+  --gradient-glow: rgba(182, 233, 102, 0.3);
+}
+
+.gradient-aurora {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 2% 12%, rgba(33, 92, 255, 0.98) 0%, rgba(33, 92, 255, 0) 40%),
+    radial-gradient(circle farthest-corner at 82% 8%, rgba(126, 109, 255, 0.86) 0%, rgba(126, 109, 255, 0) 42%),
+    radial-gradient(circle farthest-corner at 78% 94%, rgba(255, 115, 198, 0.84) 0%, rgba(255, 115, 198, 0) 48%),
+    linear-gradient(135deg, #eef2ff, #fbf7ff 56%, #fff0f7);
+  --gradient-glow: rgba(165, 136, 255, 0.36);
+}
+
+.gradient-citrine {
+  --gradient-fill:
+    radial-gradient(circle farthest-corner at 20% 16%, rgba(255, 154, 36, 0.94) 0%, rgba(255, 154, 36, 0) 40%),
+    radial-gradient(circle farthest-corner at 88% 28%, rgba(255, 194, 71, 0.84) 0%, rgba(255, 194, 71, 0) 42%),
+    radial-gradient(circle farthest-corner at 38% 86%, rgba(255, 240, 122, 0.74) 0%, rgba(255, 240, 122, 0) 48%),
+    linear-gradient(135deg, #fff5e6, #fffdf1 58%, #fff8df);
+  --gradient-glow: rgba(255, 205, 104, 0.32);
+}
+
+.text-gradient,
+.gradient-text {
+  background-image:
+    var(
+      --gradient-fill,
+      radial-gradient(circle farthest-corner at 10% 10%, rgba(53, 109, 255, 0.95) 0%, rgba(53, 109, 255, 0) 42%),
+      radial-gradient(circle farthest-corner at 88% 18%, rgba(108, 168, 255, 0.82) 0%, rgba(108, 168, 255, 0) 44%),
+      radial-gradient(circle farthest-corner at 58% 92%, rgba(105, 224, 255, 0.88) 0%, rgba(105, 224, 255, 0) 48%),
+      linear-gradient(135deg, #eaf2ff, #f8fbff 62%, #eefcff)
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-card,
+.card-highlight {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.18)),
+    radial-gradient(circle at top right, var(--gradient-glow, rgba(126, 215, 255, 0.34)), transparent 38%),
+    var(--gradient-fill),
+    var(--color-white);
+}
+
+.gradient-section,
+.section-highlight {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.3)),
+    radial-gradient(circle at top left, var(--gradient-glow, rgba(126, 215, 255, 0.34)), transparent 30%),
+    var(--gradient-fill),
+    var(--color-white);
+}
