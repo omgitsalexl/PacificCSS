@@ -66,6 +66,9 @@
   --space-9: 5rem;
   --space-10: 7rem;
   --space-11: 9rem;
+  --space-section: clamp(7rem, 10vw, 9.5rem);
+  --space-section-tight: clamp(5.5rem, 8vw, 7.5rem);
+  --scroll-offset: clamp(5.5rem, 8vw, 7rem);
 
   --width-page: min(1200px, calc(100vw - 2rem));
   --width-text: min(760px, 100%);
@@ -89,6 +92,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--scroll-offset);
 }
 
 body {
@@ -124,11 +128,15 @@ textarea {
 }
 
 .section {
-  padding: var(--space-10) 0;
+  padding: var(--space-section) 0;
 }
 
 .section-tight {
-  padding: var(--space-8) 0;
+  padding: var(--space-section-tight) 0;
+}
+
+:where(main[id], section[id]) {
+  scroll-margin-top: var(--scroll-offset);
 }
 
 .grid {
@@ -429,7 +437,7 @@ textarea {
 }
 
 .hero {
-  padding: var(--space-7) 0 var(--space-10);
+  padding: var(--space-8) 0 var(--space-section);
 }
 
 .feature-grid {
@@ -1018,15 +1026,18 @@ textarea {
 @media (max-width: 780px) {
   :root {
     --width-page: min(100vw - 1.2rem, 1200px);
+    --space-section: clamp(5rem, 12vw, 6.5rem);
+    --space-section-tight: clamp(4.25rem, 10vw, 5.5rem);
+    --scroll-offset: 5.25rem;
   }
 
   .section {
-    padding: var(--space-8) 0;
+    padding: var(--space-section) 0;
   }
 
   .section-tight,
   .hero {
-    padding: var(--space-7) 0;
+    padding: var(--space-section-tight) 0;
   }
 
   .grid-2,
