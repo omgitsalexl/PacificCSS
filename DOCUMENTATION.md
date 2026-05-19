@@ -1,8 +1,8 @@
-# Apple Editorial CSS Framework
+# PacificCSS Framework
 
 ## Purpose
 
-This framework is a light-first CSS system for building Apple-style editorial and product pages.
+PacificCSS is a light-first CSS system for building Apple-style editorial and product pages.
 
 It is based on three recurring patterns from the reference pages:
 
@@ -15,7 +15,7 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 ## Files
 
 - [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
-- [`framework/apple.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/apple.css) is the framework stylesheet
+- [`framework/pacific.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/pacific.css) is the framework stylesheet
 - [`framework/navigation.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.css) is the optional navigation stylesheet
 - [`framework/navigation.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.js) enhances the shared navigation dropdown and mobile accordion behavior
 - [`framework/carousel.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.css) is the optional carousel stylesheet
