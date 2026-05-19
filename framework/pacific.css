@@ -387,6 +387,19 @@ textarea {
   color: var(--color-text-muted);
 }
 
+.code {
+  display: inline-block;
+  padding: 0.18em 0.52em;
+  border-radius: 999px;
+  background: rgba(29, 29, 31, 0.06);
+  font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  line-height: 1.2;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
 .caption {
   margin: 0;
   font-size: var(--step--1);
@@ -697,8 +710,13 @@ textarea {
 .inverted .body,
 .inverted .caption,
 .inverted .profile-role,
-.inverted .swatch {
+.inverted .swatch,
+.inverted .code {
   color: var(--color-text-inverted-muted);
+}
+
+.inverted .code {
+  background: rgba(245, 245, 247, 0.12);
 }
 
 .inverted .display,

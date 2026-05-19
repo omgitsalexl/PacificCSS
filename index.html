@@ -72,8 +72,8 @@
                 <div class="nav-dropdown-column">
                   <p class="eyebrow">Use it well</p>
                   <p class="body">
-                    Start with quiet layout primitives, then introduce gradients or darker surfaces only where hierarchy needs
-                    help.
+                    Start with quiet structure first, then bring in color or darker surfaces only where the story asks for a
+                    little more emphasis.
                   </p>
                 </div>
               </section>
@@ -90,8 +90,8 @@
             <p class="eyebrow">Light-first editorial framework</p>
             <h1 class="display">Quiet surfaces, bold type, and the kind of spacing that lets the page breathe.</h1>
             <p class="lead">
-              This framework is built around the Apple web language found in editorial and developer pages: soft greys, large
-              rounded cards, restrained gradients, and a layout rhythm led by typography rather than decorative effects.
+              PacificCSS is built around the Apple web language found in editorial and developer pages: soft greys, generous
+              type, rounded cards, and restrained color moments that support the hierarchy instead of competing with it.
             </p>
             <div class="button-row">
               <a class="button button-primary" href="#patterns">Explore patterns</a>
@@ -100,15 +100,15 @@
             <div class="hero-meta grid grid-3 gap-5">
               <div class="stack gap-4">
                 <p class="eyebrow">Whitespace</p>
-                <p class="body">Sections are roomy and cards are allowed to sit quietly on the page.</p>
+                <p class="body">Sections stay open, and cards are given enough room to feel composed instead of crowded.</p>
               </div>
               <div class="stack gap-4">
                 <p class="eyebrow">Typography</p>
-                <p class="body">Headings carry the experience, with body copy staying soft and concise.</p>
+                <p class="body">Headings do the heavy lifting, while supporting copy stays warm, light, and easy to scan.</p>
               </div>
               <div class="stack gap-4">
                 <p class="eyebrow">Emphasis</p>
-                <p class="body">Gradients appear only where they clarify hierarchy or draw attention.</p>
+                <p class="body">Gradients appear only where they clarify hierarchy, create focus, or reward a closer look.</p>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@
               <div class="art-block">
                 <p class="title">Cards feel like objects, but the page still stays mostly white.</p>
                 <p class="body">
-                  Inspired by Apple’s editorial pages, this balance keeps the layout premium without making the system feel busy.
+                  Inspired by Apple’s editorial pages, that balance helps the layout feel premium without tipping into noise.
                 </p>
               </div>
             </article>
@@ -128,7 +128,7 @@
               <div class="stack gap-4">
                 <p class="eyebrow">Gradient restraint</p>
                 <p class="title">Use color for a moment, not the whole page.</p>
-                <p class="body">Highlight one section, one card, or one phrase at a time.</p>
+                <p class="body">Highlight one section, one card, or even one phrase at a time and let the rest stay calm.</p>
               </div>
             </article>
           </aside>
@@ -343,8 +343,8 @@
             <p class="eyebrow">Section patterns</p>
             <h2 class="title">A reusable bento system for editorial product storytelling.</h2>
             <p class="lead">
-              The layout below uses the framework’s core patterns: large cards, muted cards, highlighted cards, and a mixed-size
-              grid that feels closer to Apple.com than to a generic UI showcase.
+              The layout below shows the core editorial rhythm of the framework: varied card sizes, quiet neutral surfaces, and
+              one or two brighter moments that keep the page feeling directed instead of repetitive.
             </p>
           </div>
 
@@ -353,18 +353,18 @@
               <p class="eyebrow">Feature story</p>
               <h3 class="title">Rounded geometry and gentle contrast make dense sections feel calm.</h3>
               <p class="body">
-                The corners are large without becoming playful, the shadows are nearly invisible, and the grey surface does most
-                of the separation work.
+                The corners are generous without becoming playful, the shadows stay almost invisible, and the surface tone does
+                most of the separation work for you.
               </p>
               <div class="card-rule"></div>
               <div class="grid grid-2 gap-5">
                 <div class="stack gap-4">
                   <p class="card-number">01</p>
-                  <p class="caption">Muted surfaces support long-form content.</p>
+                  <p class="caption">Muted surfaces make longer reading feel lighter.</p>
                 </div>
                 <div class="stack gap-4">
                   <p class="card-number">02</p>
-                  <p class="caption">Nested spacing keeps rhythm steady across sections.</p>
+                  <p class="caption">Nested spacing keeps the rhythm steady from section to section.</p>
                 </div>
               </div>
             </article>
@@ -373,13 +373,13 @@
               <article class="card stack gap-4">
                 <p class="eyebrow">Typography first</p>
                 <h3 class="title">The heading should do more work than the decoration.</h3>
-                <p class="body">Large type, compact supporting copy, and clear pacing are the real visual system.</p>
+                <p class="body">Large type, measured support copy, and clear pacing are the real visual system here.</p>
               </article>
 
               <article class="card gradient-card gradient-sky stack gap-4">
                 <p class="eyebrow">Selective emphasis</p>
                 <h3 class="title">A <span class="text-gradient gradient-sky">small gradient moment</span> is enough.</h3>
-                <p class="body">Use it to lift a card or phrase, not as a permanent background treatment for everything.</p>
+                <p class="body">Use it to lift a card or phrase, not as a permanent treatment for every surface on the page.</p>
               </article>
             </div>
           </div>
@@ -467,8 +467,8 @@
             <p class="eyebrow">Gradient system</p>
             <h2 class="title">Reusable Apple-like gradients for text, cards, and full-width backgrounds.</h2>
             <p class="lead">
-              The gradients are stronger now so users can actually see them, but they still stay inside a soft Apple-like color
-              palette and remain easy to reuse throughout a page.
+              These gradients are visible enough to matter, but still soft enough to stay inside the Apple-like editorial tone of
+              the framework. They are meant to create focus, not dominate the page.
             </p>
           </div>
 
@@ -542,8 +542,8 @@
             <p class="eyebrow">Spacing utilities</p>
             <h2 class="title">Tune breathing room directly in the markup without changing the structural classes.</h2>
             <p class="lead">
-              `stack` and `grid` now handle layout only. Apply `gap-*`, `gap-x-*`, `gap-y-*`, `pad-*`, `pad-x-*`, and `pad-y-*`
-              to decide how open or compact each section should feel.
+              Layout primitives like <span class="code">stack</span> and <span class="code">grid</span> stay focused on
+              structure. Spacing utilities let you loosen or tighten the rhythm without having to rethink the component itself.
             </p>
           </div>
 
@@ -551,36 +551,48 @@
             <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">Compact stack</p>
               <h3 class="title">Keep related copy tight when the ideas belong to the same thought.</h3>
-              <p class="body">Use `gap-2` inside a stack when labels, headings, and short support copy need a compact rhythm.</p>
+              <p class="body">
+                A smaller gap works well when labels, headings, and short support copy are all part of the same quick read.
+              </p>
               <div class="spacing-demo-surface stack gap-2">
                 <p class="caption">Utility sample</p>
                 <p class="title">Short feature block</p>
-                <p class="body">`gap-2` keeps the grouping close without turning the card into a dense wall of text.</p>
+                <p class="body">
+                  <span class="code">gap-2</span> keeps the grouping close without turning the card into a dense wall of text.
+                </p>
               </div>
             </article>
 
             <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">All-around space</p>
               <h3 class="title">Add more interior room without changing the card component itself.</h3>
-              <p class="body">Use `pad-7` on a nested surface when a block needs more breathing room but should keep the same typography pace.</p>
+              <p class="body">
+                When a block needs to feel calmer, more interior padding often does more than changing the typography ever could.
+              </p>
               <div class="spacing-demo-surface pad-7 stack gap-3">
                 <p class="caption">Utility sample</p>
                 <p class="title">Roomier callout</p>
-                <p class="body">`pad-7` increases edge space evenly, which makes the surface feel calmer without pushing every card title down.</p>
+                <p class="body">
+                  <span class="code">pad-7</span> increases edge space evenly, so the surface feels more relaxed without changing
+                  the content hierarchy.
+                </p>
               </div>
             </article>
 
             <article class="card stack gap-4 spacing-demo-card">
               <p class="eyebrow">Axis control</p>
               <h3 class="title">Separate horizontal and vertical spacing when the content needs different pressures.</h3>
-              <p class="body">Use axis-specific utilities on the sample surface so readers can compare the effect without re-learning the card layout.</p>
+              <p class="body">
+                Sometimes a layout wants wider side margins but a more compact vertical rhythm. Axis-specific spacing lets you
+                tune both without rebuilding the pattern.
+              </p>
               <div class="spacing-demo-surface pad-x-7 pad-y-5 stack gap-3">
                 <p class="caption">Utility sample</p>
                 <div class="grid grid-2 gap-x-6 gap-y-3">
-                  <p class="body">`pad-x-7` widens the side margins for longer lines.</p>
-                  <p class="body">`pad-y-5` keeps the top and bottom more restrained.</p>
-                  <p class="body">`gap-x-6` opens the columns up.</p>
-                  <p class="body">`gap-y-3` keeps the rows from drifting apart.</p>
+                  <p class="body"><span class="code">pad-x-7</span> widens the side margins for longer lines.</p>
+                  <p class="body"><span class="code">pad-y-5</span> keeps the top and bottom more restrained.</p>
+                  <p class="body"><span class="code">gap-x-6</span> gives the columns more air.</p>
+                  <p class="body"><span class="code">gap-y-3</span> keeps the rows from drifting apart.</p>
                 </div>
               </div>
             </article>
@@ -594,8 +606,8 @@
             <p class="eyebrow">Glass accents</p>
             <h2 class="title">Use frosted glass as a small accent, not as the whole visual language.</h2>
             <p class="lead">
-              These classes borrow from Apple’s restrained glass treatment: bright, thin, softly bordered, and reserved for
-              headers, pills, and small controls where the blur can add polish without taking over the page.
+              These accents borrow from Apple’s restrained glass treatment: bright, thin, softly bordered, and best used on
+              smaller controls where the blur adds polish without stealing attention from the content.
             </p>
           </div>
 
@@ -607,12 +619,13 @@
               </div>
               <h3 class="title">Glass works best on small surfaces that sit over color.</h3>
               <p class="body">
-                Use it for pricing pills, sticky bars, and compact round controls where the frosted layer can read clearly.
+                Use it for pricing pills, sticky bars, and compact round controls where the frosted layer has enough contrast to
+                read cleanly.
               </p>
             </article>
 
             <article class="card stack gap-4">
-              <p class="eyebrow">Recommended classes</p>
+              <p class="eyebrow">Recommended starting points</p>
               <div class="swatch-row">
                 <span class="glass glass-pill bordered">glass</span>
                 <span class="glass glass-pill bordered">glass-bar</span>
@@ -620,8 +633,8 @@
                 <span class="glass glass-pill bordered">glass-round</span>
               </div>
               <p class="body">
-                Start with `glass`, then add one shape class depending on the use case. Pair with `bordered` when you want the
-                brighter edge Apple uses on translucent controls.
+                Start with <span class="code">glass</span>, then add the shape that best fits the component. If you want the
+                brighter edge Apple often uses on translucent controls, pair it with <span class="code">bordered</span>.
               </p>
             </article>
           </div>
@@ -634,8 +647,8 @@
             <p class="eyebrow">Content section</p>
             <h2 class="title">Light grey sections let the white cards feel deliberate.</h2>
             <p class="lead">
-              This pattern mirrors how Apple often separates long pages into soft tonal bands rather than strong boxes or dark
-              dividers.
+              This pattern mirrors how Apple often separates long pages into soft tonal bands rather than hard dividers. The page
+              keeps moving, but each section still feels intentionally framed.
             </p>
           </div>
 
@@ -643,15 +656,15 @@
             <div class="list">
               <div class="list-item">
                 <p class="eyebrow">Card rhythm</p>
-                <p class="body">Keep enough inner padding that each block reads like a composed piece of content, not a widget.</p>
+                <p class="body">Give each block enough inner room that it reads like composed content, not a dashboard widget.</p>
               </div>
               <div class="list-item">
                 <p class="eyebrow">Muted text</p>
-                <p class="body">The secondary copy should sit back noticeably so the hierarchy stays typographic and clear.</p>
+                <p class="body">Secondary copy should sit back noticeably so the hierarchy stays typographic and easy to trust.</p>
               </div>
               <div class="list-item">
                 <p class="eyebrow">Borders</p>
-                <p class="body">Borders are now opt-in so the framework stays softer by default and only sharpens where requested.</p>
+                <p class="body">Borders are opt-in, so the framework stays softer by default and sharpens only where it helps.</p>
               </div>
             </div>
           </div>
@@ -664,8 +677,8 @@
             <p class="eyebrow">Border control</p>
             <h2 class="title">Borderless by default, bordered only when you ask for it.</h2>
             <p class="lead">
-              The framework now removes borders from the default surfaces. Add the `bordered` class only when a section, card, or
-              control needs extra edge definition.
+              The framework keeps default surfaces borderless, so shape, tone, and spacing do most of the work. Add
+              <span class="code">bordered</span> only when a section, card, or control truly benefits from a clearer edge.
             </p>
           </div>
 
@@ -673,13 +686,16 @@
             <article class="card stack gap-4">
               <p class="eyebrow">Default card</p>
               <h3 class="title">Soft separation through shape and shadow.</h3>
-              <p class="body">This is the new baseline: rounded geometry, pale surface, and no default border.</p>
+              <p class="body">This is the baseline: rounded geometry, a pale surface, and no forced outline.</p>
             </article>
 
             <article class="card bordered stack gap-4">
               <p class="eyebrow">Bordered card</p>
               <h3 class="title">Add a border only when the layout benefits from it.</h3>
-              <p class="body">Use `bordered` to sharpen edges on pale backgrounds or when you want a more structured look.</p>
+              <p class="body">
+                Use <span class="code">bordered</span> when a pale background needs extra separation or when a layout wants a
+                slightly more structured feel.
+              </p>
             </article>
           </div>
 
@@ -687,8 +703,8 @@
             <p class="eyebrow">Opt-in utility</p>
             <h3 class="title">The same class can be used on larger surfaces too.</h3>
             <p class="body">
-              Apply `bordered` to cards, callouts, and sections when you want subtle edge definition without changing the
-              framework’s softer default appearance.
+              Apply <span class="code">bordered</span> to cards, callouts, and sections when you want subtle definition without
+              losing the framework’s softer default look.
             </p>
           </div>
         </div>
@@ -700,8 +716,8 @@
             <p class="eyebrow">Inverted surfaces</p>
             <h2 class="title">Invert a card or a full-width section without rewriting the content classes.</h2>
             <p class="lead">
-              Add `inverted` when a part of the page needs a darker, higher-contrast moment. The section or card will switch to
-              the framework’s inverted surface and text colors automatically.
+              Add <span class="code">inverted</span> when a part of the page needs a darker, higher-contrast moment. The section
+              or card will switch to the framework’s inverted surface and text colors automatically.
             </p>
           </div>
 
@@ -715,7 +731,7 @@
             <article class="card inverted stack gap-4">
               <p class="eyebrow">Inverted card</p>
               <h3 class="title">Dark surface with light text.</h3>
-              <p class="body">The same typography classes work here, but the section flips to the framework’s inverted palette.</p>
+              <p class="body">The same typography still works here, but the mood shifts into the framework’s darker palette.</p>
             </article>
           </div>
         </div>
@@ -736,8 +752,8 @@
             <p class="eyebrow">Full-width background</p>
             <h2 class="title">One full-width moment of color can guide the whole page.</h2>
             <p class="lead">
-              The new full-width gradient class is easier to notice, while still relying on white surfaces and pale overlays so
-              the page remains recognizably Apple-like.
+              A full-width gradient should feel like a deliberate chapter break. White surfaces and pale overlays keep the moment
+              visible, while the page still remains recognizably Apple-like.
             </p>
             <div class="button-row">
               <a class="glass glass-pill bordered" href="#glass">See glass accents</a>
@@ -753,8 +769,8 @@
             <p class="eyebrow">Full-width inversion</p>
             <h2 class="title">The same class also works for a full section.</h2>
             <p class="lead">
-              Use `inverted` on a section when the page needs a stronger break in rhythm. The lighter cards can still sit inside
-              it, or you can keep the whole block dark for a more immersive moment.
+              Use <span class="code">inverted</span> on a section when the page needs a stronger break in rhythm. Lighter cards
+              can still sit inside it, or you can keep the whole block dark for a more immersive moment.
             </p>
             <div class="button-row">
               <a class="button button-primary" href="#build">View build guidance</a>
@@ -764,7 +780,7 @@
 
           <article class="card inverted bordered stack gap-4">
             <p class="eyebrow">Combined utilities</p>
-            <h3 class="title">`inverted` and `bordered` can be used together.</h3>
+            <h3 class="title"><span class="code">inverted</span> and <span class="code">bordered</span> can be used together.</h3>
             <p class="body">
               This gives you a darker card with an optional edge, using the same composable utility approach as the rest of the
               framework.
@@ -779,7 +795,8 @@
             <p class="eyebrow">Recognition pattern</p>
             <h2 class="title">A people section inspired by Apple Developer recognition pages.</h2>
             <p class="lead measure center">
-              Profiles sit in a simple grid with generous image radii, clear names, and concise supporting descriptions.
+              Profiles sit in a simple grid with generous image radii, clear names, and concise descriptions that still leave
+              room for personality.
             </p>
           </div>
 
@@ -829,12 +846,13 @@
             <div class="grid grid-2 gap-5 editorial-pair">
               <div class="stack gap-4">
                 <p class="eyebrow">Build with the framework</p>
-                <h2 class="title">Simple class names, disciplined defaults, and enough flexibility for a full editorial page.</h2>
+                <h2 class="title">A calm starting point for developers who want their pages to feel thoughtful from the first draft.</h2>
               </div>
               <div class="stack gap-4">
                 <p class="body">
-                  Start with `container`, `section`, `stack`, `grid`, `gap-*`, and `card`. Then layer in `text-gradient`,
-                  `gradient-card`, and `gradient-section` where the page needs a visible but still controlled moment of emphasis.
+                  Start simple, explore the patterns, and shape the page a little at a time. If you made it this far, thank you
+                  for spending time with the framework. My hope is that it gives you a warmer, calmer base for building
+                  developer-facing pages that still feel polished and personal.
                 </p>
                 <div class="button-row">
                   <a class="button button-primary" href="DOCUMENTATION.md">Open documentation</a>
