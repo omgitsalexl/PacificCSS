@@ -103,6 +103,11 @@ textarea {
   font: inherit;
 }
 
+:where(a, button, input, textarea):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 .container {
   width: var(--width-page);
   margin: 0 auto;
@@ -492,6 +497,12 @@ textarea {
   border-color: var(--button-border-hover);
   transform: translateY(-1px);
   outline: none;
+}
+
+.button:focus-visible,
+.link-arrow:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 .button-primary {
@@ -1010,4 +1021,19 @@ textarea {
     flex-direction: column;
   }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

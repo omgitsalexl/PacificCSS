@@ -31,7 +31,6 @@ class HighlightsCarousel {
       return;
     }
 
-    this.root.dataset.highlightsCarouselReady = "true";
     this.root.style.setProperty("--highlights-count", String(this.slides.length));
     this.syncRootState();
 
@@ -43,6 +42,7 @@ class HighlightsCarousel {
 
     this.setupStructure();
     this.renderSlide(0, { resetProgress: true });
+    this.root.dataset.highlightsCarouselReady = "true";
     this.attachEvents();
     this.setupObserver();
   }
@@ -66,6 +66,7 @@ class HighlightsCarousel {
 
     this.nav.setAttribute("role", "tablist");
     this.nav.setAttribute("aria-label", this.root.getAttribute("aria-label"));
+    this.nav.setAttribute("aria-orientation", "horizontal");
 
     this.toggleButton.type = "button";
     this.toggleButton.classList.add("highlights-carousel-toggle-button");
@@ -114,7 +115,8 @@ class HighlightsCarousel {
       slide.setAttribute("role", "tabpanel");
       slide.setAttribute("aria-labelledby", tabId);
       slide.setAttribute("tabindex", index === 0 ? "0" : "-1");
-      slide.hidden = index !== 0;
+      slide.setAttribute("aria-hidden", index === 0 ? "false" : "true");
+      slide.toggleAttribute("inert", index !== 0);
 
       const button = document.createElement("button");
       button.type = "button";
@@ -293,9 +295,10 @@ class HighlightsCarousel {
   renderSlide(activeIndex, { resetProgress = true } = {}) {
     this.slides.forEach((slide, index) => {
       const isActive = index === activeIndex;
-      slide.hidden = !isActive;
       slide.classList.toggle("is-active", isActive);
       slide.setAttribute("tabindex", isActive ? "0" : "-1");
+      slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+      slide.toggleAttribute("inert", !isActive);
     });
 
     this.generatedTabs.forEach((button, index) => {
