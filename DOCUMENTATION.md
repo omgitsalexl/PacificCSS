@@ -65,7 +65,7 @@ The `:root` block contains the design tokens.
 ### Colors
 
 - `--color-background` sets the page background
-- `--color-surface` and `--color-surface-muted` control light section tones
+- `--color-surface` controls standard light sections; `--color-surface-muted` provides restrained cool-grey separation for muted cards and nested surfaces
 - `--color-text` and `--color-text-muted` define contrast
 - `--color-border` keeps edges readable on pale surfaces
 - borders are opt-in through the `bordered` utility rather than built into the default surfaces
@@ -225,22 +225,14 @@ Gradient classes are only available when `framework/gradients.css` is present.
 - `gradient-iris`
 - `gradient-peach`
 - `gradient-mint`
-- `gradient-sunset`
-- `gradient-berry`
-- `gradient-lagoon`
-- `gradient-orchid`
-- `gradient-coral`
-- `gradient-lime`
-- `gradient-aurora`
-- `gradient-citrine`
 
-The newer presets are a little more vibrant than the original six, but they are still tuned to stay supportive rather than loud.
+The four presets deliberately cover cool, violet, warm, and fresh color moments without creating a noisy palette. The former eight legacy presets are no longer supported.
 
 Use a gradient preset together with an application class:
 
 - `text-gradient gradient-sky`
-- `gradient-card gradient-orchid`
-- `gradient-section gradient-aurora`
+- `gradient-card gradient-iris`
+- `gradient-section gradient-mint`
 
 ### Glass utilities
 
@@ -328,14 +320,6 @@ Suggested presets:
 - `gradient-iris` for a cooler purple accent
 - `gradient-peach` for a warmer editorial accent
 - `gradient-mint` for a fresh full-width background treatment
-- `gradient-sunset` for the most vivid warm feature moment
-- `gradient-berry` for a deeper premium contrast accent
-- `gradient-lagoon` for a brighter blue-green product accent
-- `gradient-orchid` for a richer magenta-violet editorial moment
-- `gradient-coral` for a friendlier warm highlight
-- `gradient-lime` for a sunnier green accent
-- `gradient-aurora` for the boldest cool-to-warm chapter break
-- `gradient-citrine` for a bright golden highlight
 
 If too many elements use gradients, the page stops feeling Apple-like.
 
@@ -625,9 +609,9 @@ Adjust the surface tokens in `framework/pacific.css` and the gradient tokens in 
 
 ```css
 :root {
-  --color-surface-muted: #f2f0ec;
+  --color-surface-muted: #eaecf1;
   --color-gradient-peach-3: #ffd4b0;
-  --color-gradient-sunset-2: #ff5f98;
+  --color-gradient-mint-2: #8bd5c5;
 }
 ```
 
