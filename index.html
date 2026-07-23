@@ -33,25 +33,20 @@
                 >
                   Patterns
                 </button>
-                <div class="nav-mobile-panel" id="nav-panel-patterns-mobile">
-                  <div class="nav-mobile-group">
-                    <p class="eyebrow">Layout</p>
-                    <a href="#patterns">Pattern overview</a>
-                    <a href="#buttons">Button system</a>
-                    <a href="#spacing">Spacing rhythm</a>
-                  </div>
-                  <div class="nav-mobile-group">
-                    <p class="eyebrow">Surfaces</p>
-                    <a href="#gradients">Gradient moments</a>
-                    <a href="#glass">Glass accents</a>
-                    <a href="#borders">Border definition</a>
-                    <a href="#inversion">Inverted sections</a>
-                  </div>
-                </div>
               </div>
               <a class="nav-link" href="#community">Community</a>
               <a class="nav-link" href="#build">Start here</a>
             </nav>
+            <button
+              class="nav-menu-toggle"
+              type="button"
+              data-nav-menu-toggle
+              aria-expanded="false"
+              aria-controls="nav-mobile-menu"
+            >
+              <span>Menu</span>
+              <span class="nav-menu-toggle-icon" aria-hidden="true"></span>
+            </button>
           </div>
 
           <div class="nav-dropdown card card-large inverted bordered" data-nav-dropdown hidden>
@@ -78,6 +73,28 @@
                   </p>
                 </div>
               </section>
+            </div>
+          </div>
+
+          <div class="nav-mobile-menu card bordered" id="nav-mobile-menu" data-nav-mobile-menu hidden>
+            <div class="nav-mobile-links" aria-label="Mobile navigation">
+              <a href="#overview">Overview</a>
+              <a href="#highlights">Highlights</a>
+              <a href="#community">Community</a>
+              <a href="#build">Start here</a>
+            </div>
+            <div class="nav-mobile-group">
+              <p class="eyebrow">Patterns · Layout</p>
+              <a href="#patterns">Pattern overview</a>
+              <a href="#buttons">Button system</a>
+              <a href="#spacing">Spacing rhythm</a>
+            </div>
+            <div class="nav-mobile-group">
+              <p class="eyebrow">Patterns · Surfaces</p>
+              <a href="#gradients">Gradient moments</a>
+              <a href="#glass">Glass accents</a>
+              <a href="#borders">Border definition</a>
+              <a href="#inversion">Inverted sections</a>
             </div>
           </div>
         </div>

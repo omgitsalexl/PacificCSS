@@ -8,8 +8,9 @@ class NavigationMenu {
     this.dropdown = root.querySelector("[data-nav-dropdown]");
     this.dropdownInner = root.querySelector("[data-nav-dropdown-inner]");
     this.triggers = Array.from(root.querySelectorAll("[data-nav-trigger]"));
+    this.menuToggle = root.querySelector("[data-nav-menu-toggle]");
+    this.mobileMenu = root.querySelector("[data-nav-mobile-menu]");
     this.panels = new Map();
-    this.mobilePanels = new Map();
     this.desktopMedia = window.matchMedia(DESKTOP_MEDIA_QUERY);
     this.activeTrigger = null;
     this.activePanel = null;
@@ -17,7 +18,7 @@ class NavigationMenu {
     this.panelTimer = null;
     this.hideDropdownTimer = null;
 
-    if (!this.dropdown || !this.dropdownInner || this.triggers.length === 0) {
+    if (!this.dropdown || !this.dropdownInner || this.triggers.length === 0 || !this.menuToggle || !this.mobileMenu) {
       return;
     }
 
@@ -35,7 +36,6 @@ class NavigationMenu {
     this.triggers.forEach((trigger) => {
       const panelId = trigger.getAttribute("data-nav-panel");
       const panel = panelId ? this.root.querySelector(`#${panelId}`) : null;
-      const mobilePanel = trigger.parentElement?.querySelector(".nav-mobile-panel") || null;
 
       if (panel) {
         panel.hidden = true;
@@ -44,58 +44,55 @@ class NavigationMenu {
         this.panels.set(trigger, panel);
       }
 
-      if (mobilePanel) {
-        mobilePanel.hidden = true;
-        this.mobilePanels.set(trigger, mobilePanel);
-      }
-
       trigger.setAttribute("aria-expanded", "false");
     });
+
+    this.mobileMenu.hidden = true;
+    this.menuToggle.setAttribute("aria-expanded", "false");
   }
 
   attachEvents() {
     this.triggers.forEach((trigger) => {
       trigger.addEventListener("mouseenter", () => {
-        if (!this.isDesktop()) {
-          return;
+        if (this.isDesktop()) {
+          this.openDesktopPanel(trigger);
         }
-
-        this.openDesktopPanel(trigger);
       });
 
       trigger.addEventListener("focus", () => {
-        if (!this.isDesktop()) {
-          return;
+        if (this.isDesktop()) {
+          this.openDesktopPanel(trigger);
         }
-
-        this.openDesktopPanel(trigger);
       });
 
       trigger.addEventListener("click", (event) => {
-        if (this.isDesktop()) {
-          event.preventDefault();
-
-          if (this.activeTrigger === trigger && this.root.classList.contains("is-open")) {
-            this.closeDesktop();
-            return;
-          }
-
-          this.openDesktopPanel(trigger);
+        if (!this.isDesktop()) {
           return;
         }
 
         event.preventDefault();
-        this.toggleMobilePanel(trigger);
+
+        if (this.activeTrigger === trigger && this.root.classList.contains("is-open")) {
+          this.closeDesktop();
+          return;
+        }
+
+        this.openDesktopPanel(trigger);
       });
+    });
+
+    this.menuToggle.addEventListener("click", () => this.toggleMobileMenu());
+    this.mobileMenu.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        this.closeMobileMenu();
+      }
     });
 
     this.root.addEventListener("mouseenter", () => this.clearCloseTimer());
     this.root.addEventListener("mouseleave", () => {
-      if (!this.isDesktop()) {
-        return;
+      if (this.isDesktop()) {
+        this.scheduleClose();
       }
-
-      this.scheduleClose();
     });
     this.root.addEventListener("focusout", this.handleFocusOut);
     document.addEventListener("pointerdown", this.handleDocumentPointerDown);
@@ -116,6 +113,7 @@ class NavigationMenu {
     window.setTimeout(() => {
       if (!this.root.contains(document.activeElement)) {
         this.closeDesktop();
+        this.closeMobileMenu();
       }
     }, 0);
   }
@@ -126,7 +124,7 @@ class NavigationMenu {
     }
 
     this.closeDesktop({ immediate: true });
-    this.closeMobilePanels();
+    this.closeMobileMenu();
   }
 
   handleDocumentKeydown(event) {
@@ -138,31 +136,20 @@ class NavigationMenu {
       event.preventDefault();
       const triggerToFocus = this.activeTrigger;
       this.closeDesktop({ immediate: true });
-
-      if (triggerToFocus) {
-        triggerToFocus.focus();
-      }
+      triggerToFocus?.focus();
       return;
     }
 
-    if (!this.isDesktop()) {
-      const expandedTrigger = this.triggers.find((trigger) => trigger.getAttribute("aria-expanded") === "true");
-
-      if (expandedTrigger) {
-        event.preventDefault();
-        this.toggleMobilePanel(expandedTrigger, false);
-        expandedTrigger.focus();
-      }
+    if (!this.isDesktop() && !this.mobileMenu.hidden) {
+      event.preventDefault();
+      this.closeMobileMenu();
+      this.menuToggle.focus();
     }
   }
 
   handleMediaChange() {
-    if (this.isDesktop()) {
-      this.closeMobilePanels();
-      return;
-    }
-
     this.closeDesktop({ immediate: true });
+    this.closeMobileMenu();
   }
 
   scheduleClose() {
@@ -233,9 +220,7 @@ class NavigationMenu {
     this.activeTrigger = trigger;
     this.activePanel = nextPanel;
 
-    window.requestAnimationFrame(() => {
-      nextPanel.classList.add("is-active");
-    });
+    window.requestAnimationFrame(() => nextPanel.classList.add("is-active"));
 
     this.panelTimer = window.setTimeout(() => {
       nextPanel.classList.remove("is-entering");
@@ -267,11 +252,8 @@ class NavigationMenu {
       this.dropdown.hidden = true;
 
       this.panels.forEach((panel) => {
-        if (panel !== this.activePanel) {
-          panel.hidden = true;
-        }
-
-        panel.classList.remove("is-entering", "is-leaving");
+        panel.hidden = true;
+        panel.classList.remove("is-active", "is-entering", "is-leaving");
       });
     };
 
@@ -282,47 +264,26 @@ class NavigationMenu {
     }
 
     this.activeTrigger = null;
+    this.activePanel = null;
   }
 
-  toggleMobilePanel(trigger, shouldOpen = null) {
-    const panel = this.mobilePanels.get(trigger);
-
-    if (!panel) {
+  toggleMobileMenu() {
+    if (this.isDesktop()) {
       return;
     }
 
-    const isOpen = trigger.getAttribute("aria-expanded") === "true";
-    const nextState = shouldOpen === null ? !isOpen : shouldOpen;
+    if (this.mobileMenu.hidden) {
+      this.mobileMenu.hidden = false;
+      this.menuToggle.setAttribute("aria-expanded", "true");
+      return;
+    }
 
-    this.triggers.forEach((itemTrigger) => {
-      const itemPanel = this.mobilePanels.get(itemTrigger);
-      const isTarget = itemTrigger === trigger;
-
-      itemTrigger.setAttribute("aria-expanded", isTarget && nextState ? "true" : "false");
-
-      if (!itemPanel) {
-        return;
-      }
-
-      const panelShouldOpen = isTarget && nextState;
-      itemPanel.hidden = !panelShouldOpen;
-      itemPanel.classList.toggle("is-open", panelShouldOpen);
-    });
+    this.closeMobileMenu();
   }
 
-  closeMobilePanels() {
-    this.triggers.forEach((trigger) => {
-      const panel = this.mobilePanels.get(trigger);
-
-      trigger.setAttribute("aria-expanded", "false");
-
-      if (!panel) {
-        return;
-      }
-
-      panel.hidden = true;
-      panel.classList.remove("is-open");
-    });
+  closeMobileMenu() {
+    this.mobileMenu.hidden = true;
+    this.menuToggle.setAttribute("aria-expanded", "false");
   }
 }
 
