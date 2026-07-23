@@ -14,14 +14,15 @@ The framework is intentionally simple. It avoids heavy abstractions, clever sele
 
 ## Files
 
-- [`index.html`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/index.html) is the demo template
-- [`framework/pacific.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/pacific.css) is the framework stylesheet
-- [`framework/gradients.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/gradients.css) is the optional gradient add-on stylesheet
-- [`framework/navigation.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.css) is the optional navigation stylesheet
-- [`framework/navigation.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/navigation.js) enhances the shared navigation dropdown and mobile accordion behavior
-- [`framework/carousel.css`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.css) is the optional carousel stylesheet
-- [`framework/carousel.js`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/framework/carousel.js) auto-initializes the highlights carousel primitive
-- [`DOCUMENTATION.md`](/Users/omgitsalexl/Developer/Projects/Apple-like%20CSS%20Template/DOCUMENTATION.md) is this guide
+- [`index.html`](index.html) is the demo template
+- [`framework/pacific.css`](framework/pacific.css) is the framework stylesheet
+- [`framework/gradients.css`](framework/gradients.css) is the optional gradient add-on stylesheet
+- [`framework/navigation.css`](framework/navigation.css) is the optional navigation stylesheet
+- [`framework/navigation.js`](framework/navigation.js) enhances the shared navigation dropdown and compact mobile menu
+- [`framework/carousel.css`](framework/carousel.css) is the optional carousel stylesheet
+- [`framework/carousel.js`](framework/carousel.js) auto-initializes the highlights carousel primitive
+- [`framework/demo.css`](framework/demo.css) is the optional presentation layer used only by the demo page
+- [`DOCUMENTATION.md`](DOCUMENTATION.md) is this guide
 
 ## Design Intent
 
@@ -54,6 +55,8 @@ The core stylesheet is organized in this order:
 Gradient presets live in their own optional stylesheet so pages that want a quieter baseline can skip them entirely.
 
 Navigation lives in its own optional stylesheet and script so pages that do not need the richer dropdown behavior can skip both files.
+
+The demo-only presentation rules live in `framework/demo.css`. Include it when starting from `index.html`; omit it when composing a new page from the core primitives.
 
 ## Tokens
 
@@ -368,8 +371,9 @@ Load it only on pages that need richer navigation:
 - the shared dropdown uses `inverted` so it reads as a separate surface
 - opening a submenu fades and settles the card into view
 - switching between submenu triggers blends panel content instead of hard-cutting it
-- mobile collapses into stacked accordion sections instead of a floating dropdown
-- `Escape` closes the current submenu and returns focus to its trigger
+- mobile keeps a compact sticky bar and opens one viewport-bounded Menu panel
+- Menu closes after following a link, on outside interaction, on `Escape`, and when returning to desktop
+- `Escape` closes the current desktop submenu and returns focus to its trigger
 - reduced-motion users get the same structure with minimal animation
 
 ### Markup contract
@@ -394,15 +398,13 @@ Load it only on pages that need richer navigation:
           Patterns
         </button>
 
-        <div class="nav-mobile-panel">
-          <div class="nav-mobile-group">
-            <p class="eyebrow">Layout</p>
-            <a href="#patterns">Pattern overview</a>
-            <a href="#spacing">Spacing rhythm</a>
-          </div>
-        </div>
       </div>
     </nav>
+
+    <button class="nav-menu-toggle" type="button" data-nav-menu-toggle aria-expanded="false" aria-controls="nav-mobile-menu">
+      <span>Menu</span>
+      <span class="nav-menu-toggle-icon" aria-hidden="true"></span>
+    </button>
   </div>
 
   <div class="nav-dropdown card card-large inverted bordered" data-nav-dropdown hidden>
@@ -414,6 +416,17 @@ Load it only on pages that need richer navigation:
           <a class="nav-dropdown-link" href="#spacing">Spacing rhythm</a>
         </div>
       </section>
+    </div>
+  </div>
+
+  <div class="nav-mobile-menu card bordered" id="nav-mobile-menu" data-nav-mobile-menu hidden>
+    <div class="nav-mobile-links" aria-label="Mobile navigation">
+      <a href="#overview">Overview</a>
+    </div>
+    <div class="nav-mobile-group">
+      <p class="eyebrow">Patterns</p>
+      <a href="#patterns">Pattern overview</a>
+      <a href="#spacing">Spacing rhythm</a>
     </div>
   </div>
 </div>
@@ -431,9 +444,9 @@ Load it only on pages that need richer navigation:
 ### Accessibility notes
 
 - submenu parents are buttons, not placeholder links
-- the script maintains `aria-expanded` on each trigger
+- each expanded control references the exact panel it reveals through `aria-controls`
 - the desktop dropdown closes on outside interaction and `Escape`
-- mobile accordion sections can be opened and closed with the same trigger buttons
+- the mobile Menu control has a 44 px target and returns focus after `Escape`
 
 ## Mesh Gradient Notes
 
@@ -469,6 +482,8 @@ It is auto-initialized by `framework/carousel.js` and supports multiple instance
 - the control button switches between play, pause, and replay states
 - autoplay ends on the last card instead of looping
 - reduced-motion users get manual navigation instead of timed autoplay
+- without JavaScript, authored slides remain readable as a stacked list and the empty control rail stays hidden
+- generated tabs keep a 44 px touch target while their dot treatment stays visually compact
 
 ### Markup contract
 
@@ -504,6 +519,7 @@ It is auto-initialized by `framework/carousel.js` and supports multiple instance
 - use the shared spacing utilities on `.highlights-carousel-rail` when the bullets or toggle need more interior breathing room
 - use static media, inline video, or custom art inside each slide
 - include the script on any page that uses the primitive
+- do not pre-hide authored slides in your own markup; the script manages active and inactive state after enhancement
 
 ## Example
 
@@ -592,10 +608,12 @@ For the cleanest Apple-like result, use glass over gradients, color fields, or i
 
 The framework is designed to:
 
-- collapse multi-column grids to one column on smaller screens
+- step composition, showcase, and profile grids down independently instead of collapsing every layout at one breakpoint
 - reduce padding slightly without losing the sense of space
 - keep line lengths readable
 - preserve the visual weight of large cards and headings
+
+The core focus ring is visible on links, buttons, and form controls. Reduced-motion preferences disable smooth scrolling and framework transitions.
 
 When extending the framework, prefer stacking over squeezing.
 

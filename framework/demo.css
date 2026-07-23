@@ -1,0 +1,225 @@
+/* Optional presentation layer used by the PacificCSS demo page. */
+
+.spacing-demo-grid {
+  align-items: start;
+}
+
+.spacing-demo-card {
+  align-content: start;
+}
+
+.spacing-demo-surface {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: calc(var(--radius-large) - 10px);
+  background: var(--color-surface-muted);
+}
+
+.spacing-demo-surface .title {
+  font-size: var(--step-1);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.spacing-demo-surface .body {
+  font-size: var(--step-0);
+  line-height: 1.45;
+}
+
+.hero-meta {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+}
+
+.hero-panel,
+.quote-panel,
+.profile-panel,
+.cta-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+}
+
+.hero-panel::before,
+.quote-panel::before,
+.profile-panel::before,
+.cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+  opacity: 0.7;
+}
+
+.hero-panel > *,
+.quote-panel > *,
+.profile-panel > *,
+.cta-panel > * {
+  position: relative;
+}
+
+.hero-aside,
+.glass-showcase,
+.gradient-showcase,
+.button-showcase {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.button-samples,
+.gradient-samples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.button-sample,
+.bento-tall {
+  min-height: 100%;
+}
+
+.editorial-pair {
+  align-items: center;
+}
+
+.art-panel {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgba(127, 211, 255, 0.28), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 217, 184, 0.32), transparent 26%),
+    linear-gradient(180deg, #ffffff, #f4f5f8);
+}
+
+.art-block {
+  display: grid;
+  gap: var(--space-4);
+  min-height: 14rem;
+  align-content: end;
+}
+
+.hero-panel .art-block {
+  min-height: auto;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.quote-panel {
+  display: grid;
+  align-content: center;
+  gap: var(--space-2);
+  min-height: 26rem;
+}
+
+.quote-panel .title {
+  max-width: 14ch;
+}
+
+.quote-panel .caption {
+  max-width: 30ch;
+}
+
+.quote-mark {
+  margin: 0;
+  font-size: 4rem;
+  line-height: 0.8;
+  color: rgba(29, 29, 31, 0.18);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.profile-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.profile-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), transparent 20%),
+    linear-gradient(135deg, rgba(110, 114, 255, 0.2), rgba(127, 211, 255, 0.28), rgba(255, 217, 184, 0.22)),
+    #eef1f6;
+}
+
+.profile-copy {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.profile-copy .caption {
+  line-height: 1.25;
+}
+
+.profile-role {
+  margin: 0;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.inverted .profile-role {
+  color: var(--color-text-inverted-muted);
+}
+
+.inverted .profile-name,
+.inverted .card-number {
+  color: var(--color-text-inverted);
+}
+
+.cta-panel {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+@media (max-width: 1100px) {
+  .profile-grid,
+  .gradient-samples,
+  .button-samples {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .editorial-pair {
+    align-items: start;
+  }
+
+  .cta-panel {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .gradient-samples,
+  .button-samples {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
