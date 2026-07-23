@@ -12,6 +12,7 @@
 
 .highlights-carousel-grid {
   align-items: start;
+  margin-top: var(--space-4);
 }
 
 .highlights-carousel {
@@ -80,7 +81,7 @@
 }
 
 .highlights-carousel-tab.is-active {
-  background: rgba(29, 29, 31, 0.05);
+  background: transparent;
 }
 
 .highlights-carousel-tab-track {
